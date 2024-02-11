@@ -1,0 +1,124 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Kinesis's Blog</title>
+  <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
+  <updated>2024-02-11T22:21:29+09:00</updated>
+  <author>
+    <name>Kinesis</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="ko"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024 Kinesis </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Github Blog 생성하기</title>
+    <link href="http://localhost:4000/posts/Making_Github_Blog/" rel="alternate" type="text/html" title="Github Blog 생성하기" />
+    <published>2024-02-07T12:30:00+09:00</published>
+  
+    <updated>2024-02-07T12:30:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Making_Github_Blog/</id>
+    <content src="http://localhost:4000/posts/Making_Github_Blog/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="Making" />
+    
+    <category term="Blog" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  토이 프로젝트로 게임 개발일지를 작성할 필요성을 느꼈습니다.
+개발일지를 작성하고 싶었기에 개인 블로그가 필요했습니다.
+
+  기존에 사용하던 블로그는 velog, Github Pages 등이 있습니다.
+velog는 tag(category)를 한 번 생성하면 삭제되지 않아서 더럽게 보였습니다.
+Github Pages는 유튜브 영상을 보면서 만들어 보았으나, 테마가 안 예뻐서 글 하나만 작성하고 중단했던 기억이 있습니다.
+티스토리 계정을 생성까지 해보았지만, 마음에 들지는 않았습니다.
+
+  따라서, Github Pages로 다시 블로그를 생성해 보았습니다.
+
+
+
+
+개발 환경 설정하기
+
+  Window OS와 Github Desktop을 기준으로 작업을 진행하였습니다.
+본 Blog에서는 git과 Gith...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Getting Started</title>
+    <link href="http://localhost:4000/posts/aaa/" rel="alternate" type="text/html" title="Getting Started" />
+    <published>2019-08-09T21:55:00+09:00</published>
+  
+    <updated>2019-08-09T21:55:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/aaa/</id>
+    <content src="http://localhost:4000/posts/aaa/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Prerequisites
+
+Follow the instructions in the Jekyll Docs to complete the installation of the basic environment. Git also needs to be installed.
+
+Installation
+
+Creating a New Site
+
+There are two ways to create a new repository for this theme:
+
+
+  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
+  GitHub Fork - Convenient for custom devel...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
