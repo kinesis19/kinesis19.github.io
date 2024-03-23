@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-03-23T00:56:10+09:00</updated>
+  <updated>2024-03-24T00:43:37+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day1" />
     <published>2024-03-18T12:30:00+09:00</published>
   
-    <updated>2024-03-18T12:30:00+09:00</updated>
+    <updated>2024-03-23T00:56:38+09:00</updated>
   
     <id>http://localhost:4000/posts/Baram-Seminar-DL-Day1/</id>
     <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" />
