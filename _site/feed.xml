@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-03-24T13:40:43+09:00</updated>
+  <updated>2024-04-03T00:42:24+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,82 @@
 
   
   <entry>
+    <title>/Baram/Seminar/DeepLearning/Day2</title>
+    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day2" />
+    <published>2024-03-18T12:30:00+09:00</published>
+  
+    <updated>2024-03-18T12:30:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Baram-Seminar-DL-Day2/</id>
+    <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="Baram" />
+    
+    <category term="Seminar" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  오늘도 광운대학교 로봇학부 동아리인 바람에서 진행하는 딥러닝 세미나에 참석했습니다.
+오늘은 딥러닝 세미나 2일차입니다.
+딥러닝에 대하여 자세한 내용을 배울 것 같아 기대됩니다.
+지금부터, 딥러닝 세미나 2일차에 참여하여 배우고 생각한 내용들을 정리하여 기록해 보겠습니다.
+
+
+
+
+인공지능 학습의 종류
+인공지능의 학습은 아래와 같이 종류가 있으며, 설명할 수 있겠습니다.
+
+  지도학습
+    
+      응애 나 애기, 뭐가 뭔지 다 알려줘!
+    
+  
+  비지도학습
+    
+      내가 특징을 파악해볼게~
+    
+  
+  자기지도학습
+    
+      반핑프
+    
+  
+  강화학습
+    
+      잘하면 당근, 못하면 채찍
+    
+  
+
+
+1. 지도학습
+지도학습은 정답을 알고 있...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>/Baram/Seminar/DeepLearning/Day1</title>
     <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day1" />
     <published>2024-03-18T12:30:00+09:00</published>
   
-    <updated>2024-03-24T00:44:06+09:00</updated>
+    <updated>2024-03-24T13:45:34+09:00</updated>
   
     <id>http://localhost:4000/posts/Baram-Seminar-DL-Day1/</id>
     <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" />
