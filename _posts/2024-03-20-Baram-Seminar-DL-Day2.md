@@ -47,27 +47,36 @@ toc: true
 - 잘 수행할 경우 : 보상 있음.
 - 잘 수행하지 못할 경우 : 보상 없음.
 
-### Hyper Parameter
+## Hyper Parameter
 Hyper Parameter는 직접 지정해 주어야 하는 데이터입니다.<br>
 - 총 Epoch 수 : 전체 데이터를 몇 번 반복해서 볼 것 인지 나타내는 용어입니다.
 - Batch Size : 한 번 볼 때, 몇 개씩 볼 것인지 나타내는 용어입니다.
 - Learning Rate(학습률) : 얼마나 갈 것인지(학습할 것인지)를 나타내는 용어입니다.
 
-### Loss Function
+## Loss Function
 Loss Function = Guide Line <br>
 우리가 만든 모델이 얼마나 '잘' 혹은 '못'하고 있는지 알려주는 지표입니다.<br>
 > 어떻게 알려줄까?
 {: .prompt-tip }
 => 수학 공식을 이용하여 알려줍니다.<br>
 
-### Global Minimum
+## Global Minimum
 손실이 최소가 되는 지점입니다.
 Loss가 최소화되는 지점으로 학습되면, 좋은 모델이라고 말할 수 있습니다.<br>
 최적의 W(가중치)와 b(편향)을 찾는 것이 중요합니다.
-![GlobalMinimum](/assets/img/2024_03_18/GlobalMinimum_img.png)
+![GlobalMinimum](/assets/img/2024_03_20/GlobalMinimum_img.png)
+<br><br>
+
+## Optimizer
+Optimizer(최적화 알고리즘) : Loss Function의 최솟 값을 구하는 데 도움을 줍니다.
+
+### Gradient Descent(GD)
+Gradient Descent(GD)는 경사하강법으로도 불립니다.
+
+
 
 ## 마무리
-오늘은 이렇게 바람에서 진행된 딥러닝 세미나 1일차에 참석하여 인공지능에 대하여 배울 수 있었습니다.<br>
+오늘은 이렇게 바람에서 진행된 딥러닝 세미나 2일차에 참석하여 인공지능에 대하여 배울 수 있었습니다.<br>
 개념 위주의 세미나이기에 인공지능에 대하여 거부감 없이 친숙하게 배울 수 있었던 것 같습니다.<br>
 고등학생 때 배웠던 내용이지만, 까먹어서 기억이 잘 나지 않았습니다.<br>
 그래도, 강의를 진행해주신 선배님께서 친절히 설명해 주셨기에 다시 떠올리며 복습할 수 있게 되었습니다.<br><br>
