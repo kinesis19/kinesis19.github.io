@@ -65,14 +65,21 @@ Loss Function = Guide Line <br>
 Loss가 최소화되는 지점으로 학습되면, 좋은 모델이라고 말할 수 있습니다.<br>
 최적의 W(가중치)와 b(편향)을 찾는 것이 중요합니다.
 ![GlobalMinimum](/assets/img/2024_03_20/GlobalMinimum_img.png)
+자료 출처 : 원본 자료 출처 확인 안 됨.
 <br><br>
 
 ## Optimizer
 Optimizer(최적화 알고리즘) : Loss Function의 최솟 값을 구하는 데 도움을 줍니다.
 
 ### Gradient Descent(GD)
-Gradient Descent(GD)는 경사하강법으로도 불립니다.
+Gradient Descent(GD)는 '경사 하강법'으로 불립니다.
+![GlobalMinimum](/assets/img/2024_03_20/Gradient_Descent.png)
+자료 출처 : 원본 자료 출처 확인 안 됨.
 
+학습률(a)이 너무 높으면 Minimum Point를 건너뛸 수 있음.
+
+### Stochastic Gradient Descent
+Stochastic Gradient Descent(SGD)는 '확률적 경사 하강법'으로 불립니다.
 
 
 ## 마무리

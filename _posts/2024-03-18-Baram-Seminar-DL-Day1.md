@@ -134,8 +134,6 @@ DNN은 기존 NN보다 Hidden Layer(은닉층)가 deep하게 많은 형태입니
 은닉층이 많다는 것은, 문제 해결 능력이 뛰어나며 이는 학습 결과의 향상까지 이어집니다.<br>
 (= 은닉층 많음 -> 해결 능력 뛰어남 -> 학습 결과 향상)<br>
 ![NN과 DNN의 차이](/assets/img/2024_03_18/NNvsDNN.png)<br>
-참고자료 <1>
-
 자료 출처 : 삶은 확률의 구름님의 ['[인공지능] ANN, DNN, CNN, RNN 개념과 차이'](https://ebbnflow.tistory.com/119#:~:text=%EC%88%98%20%EC%9E%88%EA%B2%8C%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.-,DNN(Deep%20Neural%20Network),-NN%20vs%20DNN) <br>
 
 Image분석에 있어서는 DNN은 효과적이지 않습니다.<br>
@@ -221,6 +219,3 @@ NN에는 크게 세 종류가 존재합니다.<br>
 그래도, 강의를 진행해주신 선배님께서 친절히 설명해 주셨기에 다시 떠올리며 복습할 수 있게 되었습니다.<br><br>
 
 세미나 녹화 영상 : 바람 공식 유튜브 - [[파이썬 없이 배우는 딥러닝] OT & 인공지능의 기초 : 머신러닝과 딥러닝의 이해](https://youtu.be/4qwQ0qkHE08?si=Lj__aWTIuhcVvKK3)
-
-## 참고자료
-<1> 삶은 확률의 구름님의 ['[인공지능] ANN, DNN, CNN, RNN 개념과 차이'](https://ebbnflow.tistory.com/119#:~:text=%EC%88%98%20%EC%9E%88%EA%B2%8C%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.-,DNN(Deep%20Neural%20Network),-NN%20vs%20DNN)
