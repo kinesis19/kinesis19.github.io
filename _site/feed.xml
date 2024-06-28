@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-05-01T19:37:24+09:00</updated>
+  <updated>2024-06-28T23:19:02+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,59 @@
 
   
   <entry>
+    <title>/Redbrick/Redbrick_Creator_Day</title>
+    <link href="http://localhost:4000/posts/Redbrick_Creator_Day/" rel="alternate" type="text/html" title="/Redbrick/Redbrick_Creator_Day" />
+    <published>2024-04-13T16:00:00+09:00</published>
+  
+    <updated>2024-04-13T16:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Redbrick_Creator_Day/</id>
+    <content src="http://localhost:4000/posts/Redbrick_Creator_Day/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="Redbrick" />
+    
+    <category term="Blog" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  안녕하세요, 키네시스입니다. 
+2024년 4월 13일, 제1회 Redbrick Creator Day에 초대받아 레드브릭 본사에 다녀왔습니다. 
+이번 포스트에서는 제1회 Redbrick Creator Day에 다녀온 후기를 작성하려고 합니다. 
+
+
+준비
+전날 밤
+제1회 RCD(레드브릭 크리에이터 데이)가 진행되기 전에, 레드브릭 관련 자료를 조사할 필요가 있었습니다.
+레드브릭에서 추구하는 가치와 비전, 관련 기사들을 스크랩하여 간단하게 리마인드 했습니다.📝
+
+오전 9시
+토요일 오전 9시에 기상했습니다. 일찍 전날 과제하고 자료 조사 하느라 늦게 잤는데, 일찍 일어나서 피곤했습니다. 출발하기 전에 깨끗하게 씻고 머리를 손질했습니다. 넥타이를 매는데, 시간을 오래 쓴 것 같습니다. 넥타이 매는 게 생각...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>/Baram/Seminar/DeepLearning/Day2</title>
     <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day2" />
     <published>2024-03-18T12:30:00+09:00</published>
   
-    <updated>2024-05-01T19:14:18+09:00</updated>
+    <updated>2024-05-01T19:38:01+09:00</updated>
   
     <id>http://localhost:4000/posts/Baram-Seminar-DL-Day2/</id>
     <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" />
@@ -95,7 +143,7 @@
     <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day1" />
     <published>2024-03-18T12:30:00+09:00</published>
   
-    <updated>2024-05-01T19:14:18+09:00</updated>
+    <updated>2024-05-01T19:38:01+09:00</updated>
   
     <id>http://localhost:4000/posts/Baram-Seminar-DL-Day1/</id>
     <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" />
