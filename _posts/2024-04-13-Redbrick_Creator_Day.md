@@ -1,5 +1,5 @@
 ---
-title: /Redbrick/Redbrick_Creator_Day
+title: Redbrick Creator Day Review
 author: cotes
 date: 2024-04-13 16:00:00 +0900
 categories: [Redbrick, Blog]

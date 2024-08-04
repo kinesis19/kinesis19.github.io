@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-08-04T19:39:51+09:00</updated>
+  <updated>2024-08-04T20:02:00+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>/ATmega128/Concept_Summery</title>
-    <link href="http://localhost:4000/posts/ATmega128_Concept_Summery/" rel="alternate" type="text/html" title="/ATmega128/Concept_Summery" />
+    <title>ATmega128 개념 정리</title>
+    <link href="http://localhost:4000/posts/ATmega128_Concept_Summery/" rel="alternate" type="text/html" title="ATmega128 개념 정리" />
     <published>2024-08-04T15:00:00+09:00</published>
   
-    <updated>2024-08-04T15:00:00+09:00</updated>
+    <updated>2024-08-04T19:40:16+09:00</updated>
   
     <id>http://localhost:4000/posts/ATmega128_Concept_Summery/</id>
     <content src="http://localhost:4000/posts/ATmega128_Concept_Summery/" />
@@ -90,8 +90,8 @@ A포트에 전체 5V를 출력합니다.
 
   
   <entry>
-    <title>/Redbrick/Redbrick_Creator_Day</title>
-    <link href="http://localhost:4000/posts/Redbrick_Creator_Day/" rel="alternate" type="text/html" title="/Redbrick/Redbrick_Creator_Day" />
+    <title>Redbrick Creator Day Review</title>
+    <link href="http://localhost:4000/posts/Redbrick_Creator_Day/" rel="alternate" type="text/html" title="Redbrick Creator Day Review" />
     <published>2024-04-13T16:00:00+09:00</published>
   
     <updated>2024-04-13T16:00:00+09:00</updated>
@@ -138,8 +138,8 @@ A포트에 전체 5V를 출력합니다.
 
   
   <entry>
-    <title>/Baram/Seminar/DeepLearning/Day2</title>
-    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day2" />
+    <title>Baram Seminar DeepLearning Day2</title>
+    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day2/" rel="alternate" type="text/html" title="Baram Seminar DeepLearning Day2" />
     <published>2024-03-18T12:30:00+09:00</published>
   
     <updated>2024-05-01T19:38:01+09:00</updated>
@@ -209,8 +209,8 @@ A포트에 전체 5V를 출력합니다.
 
   
   <entry>
-    <title>/Baram/Seminar/DeepLearning/Day1</title>
-    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="/Baram/Seminar/DeepLearning/Day1" />
+    <title>Baram Seminar DeepLearning Day1</title>
+    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="Baram Seminar DeepLearning Day1" />
     <published>2024-03-18T12:30:00+09:00</published>
   
     <updated>2024-05-01T19:38:01+09:00</updated>

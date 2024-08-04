@@ -1,5 +1,5 @@
 ---
-title: /Baram/Seminar/DeepLearning/Day1
+title: Baram Seminar DeepLearning Day1
 author: cotes
 date: 2024-03-18 12:30:00 +0900
 categories: [Baram, Seminar]

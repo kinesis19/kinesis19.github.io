@@ -1,5 +1,5 @@
 ---
-title: /ATmega128/Concept_Summery
+title: ATmega128 개념 정리
 author: cotes
 date: 2024-08-04 15:00:00 +0900
 categories: [ATmega128]
