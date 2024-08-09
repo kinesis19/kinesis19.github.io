@@ -317,8 +317,44 @@ USART의 송/수신 속도를 설정합니다. **UBRRnL 설정 후 UBRRnH를 나
 ## Timer Interrupt Register
 Timer Interrupt를 제어하기 위해서는 TIMSK, TCCRn, TCNTn register의 사용법을 알아야 합니다.
 ### TIMSK
-TIMSK(Timer Interrupt Mask Register)
+TIMSK(Timer Interrupt Mask Register)는 Counter 0과 Counter2를 허용하는 register입니다.
+![ATmega128_TIMSK](/assets/img/2024_08_04/ATmega128_TIMSK.png)
 
+> [Bit 0]
+> TOIEn(Overflow Interrupt Enable)
+> - 1 : Overflow Interrupt 활성화
+> - 0 : Overflow Interrupt 비활성화
+
+> [Bit 1]
+> OCIEn(Output Compare Match Interrupt Enable)
+> - 1 : Output Compare Match Interrupt 활성화
+> - 0 : Output Compare Match Interrupt 비활성화
+
+### TCCRn(n = 0, 2)
+TCCRn(Timer/Counter Control Register)는 Timer/Counter n번의 동작 방식에 대한 모든 것을 Control합니다.
+![ATmega128_TCCRn](/assets/img/2024_08_04/ATmega128_TCCRn.png)
+
+> [Bit 2:0]
+> CS02, CS01, CS00 (Clock Select)<br>
+> Select Prescaler
+> ![ATmega128_Clock_Select_Bit_Description](/assets/img/2024_08_04/ATmega128_Clock_Select_Bit_Description.png)
+
+
+> Select Prescaler
+> > [Bit 6, 3]
+> > 1. Waveform Generation Mode
+> > ![ATmega128_Waveform_Generation_Mode_Bit_Description](/assets/img/2024_08_04/ATmega128_Waveform_Generation_Mode_Bit_Description.png)
+
+> > [Bit 5:4]
+> > 2. Compare Output Mode, non-PWM Mode
+> > ![ATmega128_Compare_Output_Mode_Non_PWM_Mode](/assets/img/2024_08_04/ATmega128_Compare_Output_Mode_Non_PWM_Mode.png)
+
+
+### TCNT0(n = 0, 2)
+TCNTn(Timer/Counter Register)는 한 주기당 들어오는 신호를 Counting 해주는 register입니다.
+
+TCNT0은 Timer/Counter 0 의 8bit Counter value를 저장하고 있는 register입니다. Timer/Counter 0 의 값이 자동으로 갱신 됩니다.
+![ATmega128_TCNT0](/assets/img/2024_08_04/ATmega128_TCNT0.png)
 
 <br><br>
 
@@ -717,4 +753,24 @@ Interrupt Type
 2. TCNTn 값이 Overflow가 되면 interrupt가 발생합니다.
 
 
+### Timer Working
+[8Bit Timer 0, 2의 Basic Working]
+1. count하는 input pulse의 개수를 TCNTn에 기록합니다.
+2. 8Bit Timer므로 TCNTn이 2^8 (=255) 일 때 input pulse가 추가되면 TCNTn은 0으로 기록됩니다.
+3. 0xFF 에서 0x00으로 넘어갈 때 오버플로우가 발생합니다.
 
+![ATmega128_TimerWorking](/assets/img/2024_08_04/ATmega128_TimerWorking.png)
+
+### Timer Overflow Calculation
+Timer OVF Interrupt Cycle Calculation
+1. TCNT가 증가하는 시간을 변경합니다.(Changing Prescaler)
+2. TCNT의 초기값을 변경합니다.
+
+![ATmega128_TimerInterrupt_Overflow](/assets/img/2024_08_04/ATmega128_TimerInterrupt_Overflow.png)
+
+#### 1. Changing Prescaler
+![ATmega128_TimerInterrupt_Change_Prescale](/assets/img/2024_08_04/ATmega128_TimerInterrupt_Change_Prescale.png)
+
+#### 2. Changing TCNT Initial Value
+
+![ATmega128_TimerInterrupt_Change_TCNT_Value](/assets/img/2024_08_04/ATmega128_TimerInterrupt_Change_TCNT_Value.png)
