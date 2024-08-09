@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-08-09T21:00:19+09:00</updated>
+  <updated>2024-08-10T00:27:49+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -86,7 +86,7 @@ Index : 1 ~ 18 (Total : 18)
     <link href="http://localhost:4000/posts/ATmega128_Concept_Summery/" rel="alternate" type="text/html" title="ATmega128 개념 정리" />
     <published>2024-08-04T15:00:00+09:00</published>
   
-    <updated>2024-08-09T18:04:20+09:00</updated>
+    <updated>2024-08-09T21:02:40+09:00</updated>
   
     <id>http://localhost:4000/posts/ATmega128_Concept_Summery/</id>
     <content src="http://localhost:4000/posts/ATmega128_Concept_Summery/" />
