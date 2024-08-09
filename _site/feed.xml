@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-08-09T16:28:33+09:00</updated>
+  <updated>2024-08-09T18:03:16+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/ATmega128_DCMotor_Control/" rel="alternate" type="text/html" title="ATmega128 DC Motor Control" />
     <published>2024-08-09T14:00:00+09:00</published>
   
-    <updated>2024-08-09T14:00:00+09:00</updated>
+    <updated>2024-08-09T16:30:01+09:00</updated>
   
     <id>http://localhost:4000/posts/ATmega128_DCMotor_Control/</id>
     <content src="http://localhost:4000/posts/ATmega128_DCMotor_Control/" />
