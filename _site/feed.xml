@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-08-05T09:51:01+09:00</updated>
+  <updated>2024-08-09T16:28:33+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,68 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>ATmega128 DC Motor Control</title>
+    <link href="http://localhost:4000/posts/ATmega128_DCMotor_Control/" rel="alternate" type="text/html" title="ATmega128 DC Motor Control" />
+    <published>2024-08-09T14:00:00+09:00</published>
+  
+    <updated>2024-08-09T14:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ATmega128_DCMotor_Control/</id>
+    <content src="http://localhost:4000/posts/ATmega128_DCMotor_Control/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="ATmega128" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      본 포스트는 ATmega128의 DC Motor를 제어하기 위해 연구하고 테스트 내용을 기록한 포스트입니다.
+
+
+
+Parts Information
+
+  L298N(Driver Module) * 1
+  pin header(male)
+  pin header(female)
+  diode * 8
+  capacitor * 2
+
+
+L298N Connection Information
+Index : 1 ~ 18 (Total : 18)
+[2] : OUT1
+[3] : OUT2
+[4] : 12V -&amp;gt; GND
+[5] : PB0
+[6] : PB5
+[7] : PB1
+[8] : GND
+[9] : 5V -&amp;gt; GND
+[10] : PB2
+[11] : PB6
+[12] : PB3
+[13] : OUT3
+[14] : OUT4
+[1...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -259,59 +321,6 @@ A포트에 전체 5V를 출력합니다.
 휴머노이드가 아닌 안드로이드를 만들고 싶은 이유는 다음과 같습니다.
 
   나노...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Github Blog 생성하기</title>
-    <link href="http://localhost:4000/posts/Making_Github_Blog/" rel="alternate" type="text/html" title="Github Blog 생성하기" />
-    <published>2024-02-07T12:30:00+09:00</published>
-  
-    <updated>2024-02-07T12:30:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Making_Github_Blog/</id>
-    <content src="http://localhost:4000/posts/Making_Github_Blog/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Making" />
-    
-    <category term="Blog" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  토이 프로젝트로 게임 개발일지를 작성할 필요성을 느꼈습니다.
-개발일지를 작성하고 싶었기에 개인 블로그가 필요했습니다.
-
-  기존에 사용하던 블로그는 velog, Github Pages 등이 있습니다.
-velog는 tag(category)를 한 번 생성하면 삭제되지 않아서 더럽게 보였습니다.
-Github Pages는 유튜브 영상을 보면서 만들어 보았으나, 테마가 안 예뻐서 글 하나만 작성하고 중단했던 기억이 있습니다.
-티스토리 계정을 생성까지 해보았지만, 마음에 들지는 않았습니다.
-
-  따라서, Github Pages로 다시 블로그를 생성해 보았습니다.
-
-
-
-
-개발 환경 설정하기
-
-  Window OS와 Github Desktop을 기준으로 작업을 진행하였습니다.
-본 Blog에서는 git과 Gith...
     </summary>
   
 

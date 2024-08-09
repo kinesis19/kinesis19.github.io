@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "ATmega128 DC Motor Control",
+    "url": "/posts/ATmega128_DCMotor_Control/",
+    "categories": "ATmega128",
+    "tags": "ATmega128, Robit, Study",
+    "date": "2024-08-09 14:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "본 포스트는 ATmega128의 DC Motor를 제어하기 위해 연구하고 테스트 내용을 기록한 포스트입니다.Parts Information  L298N(Driver Module) * 1  pin header(male)  pin header(female)  diode * 8  capacitor * 2L298N Connection InformationIn...",
+    "content": "본 포스트는 ATmega128의 DC Motor를 제어하기 위해 연구하고 테스트 내용을 기록한 포스트입니다.Parts Information  L298N(Driver Module) * 1  pin header(male)  pin header(female)  diode * 8  capacitor * 2L298N Connection InformationIndex : 1 ~ 18 (Total : 18)[2] : OUT1[3] : OUT2[4] : 12V -&gt; GND[5] : PB0[6] : PB5[7] : PB1[8] : GND[9] : 5V -&gt; GND[10] : PB2[11] : PB6[12] : PB3[13] : OUT3[14] : OUT4[15] : GNDSource CodeGithub Repo/* * DC_MotorTest.c * * Created: 2024-08-07 오후 3:45:12 * Author : lordk */ #define F_CPU 16000000#include &lt;avr/io.h&gt;#include &lt;avr/interrupt.h&gt;#include &lt;util/delay.h&gt;#include \"LCD_Text.h\"void Initializing(void);int main(void) {\tInitializing();\t\twhile (1) {\t\t\t}\t}void Initializing(void){\t// -----[Declare Register]-----\tDDRB = 0x6F;  // PB1, PB2 핀을 출력으로 설정하기(OC1A, OC1B).\t\tEIMSK = 0b00001111;\tEICRA = 0b10101010;\t\tTCCR1A = 0xA2; // 0b10100010\tTCCR1B = 0x1A; // 0b00011010\tTCCR1C = 0x00; // 0b00000000\t\tICR1 = 399;\tTCNT1 = 0x00;\t\tsei();\t\tlcdInit();\tlcdClear();}// -----[Switch Interrupt Control]-----// -----[Moving: Forward]-----ISR(INT0_vect){\tPORTB = (PORTB &amp; 0xF0) | 0x05;\tOCR1A = ICR1 * 1;\tOCR1B = ICR1 * 1;\t\tlcdClear();\tlcdString(0, 0, \"Moving Foward!\");}// -----[Moving: Back]-----ISR(INT1_vect){\tPORTB = (PORTB &amp; 0xF0) | 0x0A;\tOCR1A = ICR1 * 1;\tOCR1B = ICR1 * 1;\t\tlcdClear();\tlcdString(0, 0, \"Moving Back!\");}// -----[Turning: Right]-----ISR(INT2_vect){\tPORTB = (PORTB &amp; 0xF0) | 0x05;\tOCR1A = ICR1 * 1;\tOCR1B = ICR1 * 0;\t\tlcdClear();\tlcdString(0, 0, \"Turning Right!\");}// -----[Turning: Left]-----ISR(INT3_vect){\tPORTB = (PORTB &amp; 0xF0) | 0x05;\tOCR1A = ICR1 * 0;\tOCR1B = ICR1 * 1;\t\tlcdClear();\tlcdString(0, 0, \"Turning Left!!\");}DescriptionPreprocessing(전처리문)#define F_CPU 16000000#include &lt;avr/io.h&gt;#include &lt;avr/interrupt.h&gt;#include &lt;util/delay.h&gt;#include \"LCD_Text.h\"void Initializing(void);_delay_ms() 함수를 사용하기 위해 F_CPU 관련 정의가 필요합니다. 제가 사용하는 MCU의 처리 속도는 16Mhz입니다. 따라서, F_CPU를 정의할 때 16000000으로 값을 정의하였습니다.avr의 input, ouput이 가능하게 하기 위해 관련 헤더파일인&lt;avr/io/h&gt;를 선언하였습니다.switch의 입력에 따라 움직임을 다르게 하기 위해 &lt;avr/interrupt.h&gt;를 선언하였습니다._delay_ms() 함수를 사용하기 위해 관련 헤더파일인 &lt;util/delay.h&gt;를 선언하였습니다.Register를 초기화 하기 위한 Initializing90000함수를 Prototype 형태로 선언하였습니다.main Function (main 함수 내부)int main(void) {\tInitializing();\t\twhile (1) {\t\t\t}\t}프로램이 시작 되면, Initializing() 함수를 통해 프로그램 내에서 사용할 register를 초기화 해주었습니다.while()문을 사용하여 프로그램이 종료되지 않도록 구현하였습니다.Initializzing Functionvoid Initializing(void){\t// -----[Declare Register]-----\tDDRB = 0x6F;  // PB1, PB2 핀을 출력으로 설정하기(OC1A, OC1B).\t\tEIMSK = 0b00001111;\tEICRA = 0b10101010;\t\tTCCR1A = 0xA2; // 0b10100010\tTCCR1B = 0x1A; // 0b00011010\tTCCR1C = 0x00; // 0b00000000\t\tICR1 = 399;\tTCNT1 = 0x00;\t\tsei();\t\tlcdInit();\tlcdClear();}DC 모터는 각각 PB1, PB2 PIN에 연결하였습니다. DC 모터를 사용하기 위해 DDRB를 출력 모드로 선언했습니다. 현재 저는 PB4를 제외한 모든 PB PIN들을 사용하고 있으므로 PB4를 제외한 나머지 PIN들을 출력모드로 선언했습니다.switch0부터 ~ switch3까지에 대하여 interrupt 기능을 사용하기 위해 EIMSK register를 선언했습니다. switch가 총 네 개이며, 사용할 interrupt 역시 네 개입니다. INT0부터 ~ INT3까지의 interrupt를 활성화 해주었습니다.INT0부터 ~ INT3까지의 interrupt에 대하여 감지 방법을 설정해 주기 위해 EICRA register를 선언했습니다."
+  },
+  
+  {
     "title": "ATmega128 개념 정리",
     "url": "/posts/ATmega128_Concept_Summery/",
     "categories": "ATmega128",
