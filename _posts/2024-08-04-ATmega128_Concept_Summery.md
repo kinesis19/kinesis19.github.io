@@ -908,6 +908,8 @@ Timer OVF Interrupt Cycle Calculation
 - Overflow, Output Compare Match A/B/C, Input Capture Interrupt를 사용할 수 있습니다.
 - Output Compare Match할 때 Timer를 Clear (CTC Mode)합니다.
 
+<br>
+
 ### TIMER 1/3 Working
 - 내/외부 Clock 중 하나를 선택하여 기준 Clock으로 지정합니다.
 - Timer/Counter1, 3은 0x0000~0xFFFF까지 Count하여 Overflow되면  OVF Interrupt가 걸립니다.
@@ -925,15 +927,126 @@ Timer OVF Interrupt Cycle Calculation
 
 ![ATmega128_PWM_Modulation](/assets/img/2024_08_04/ATmega128_PWM_Modulation.png)
 
+<br>
+
 ### Fast PWM Mode
 ![ATmega128_PWM_Fast_Mode](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode.png)
 
+<br>
+
 ![ATmega128_PWM_Fast_Mode_Frequency](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode_Frequency.png)
+
+<br>
 
 ### Phase Correct PWM Mode (126P)
 ![Phase Correct PWM Mode (126P)](/assets/img/2024_08_04/ATmega128_PWM_Mode_Phase_Correct_128.png)
 
+<br>
+
 ### Fast PWM Mode (125P)
 ![Fast PWM Mode (125P)](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode_125P.png)
+
+<br><br>
+
+## Input Capture 관련 개념
+- Embeded System에서 Input Signal을 다루는 방법의 하나로 Input Signal가 들어  왔을 때의 Timestamp를 memory에 저장하는 기능입니다.
+- 외부 Signal의 발생 Time을 알아내는 용도로 활용됩니다.
+- PWM 측정, 기간 측정, Event Time Capture
+
+![ATmega128_InputCapture](/assets/img/2024_08_04/ATmega128_InputCapture.png)ss
+
+<br><br>
+
+## Ultrasonic Sensor 관련 개념
+### Electric Parameter
+![ATmega128_UltrasonicSensor](/assets/img/2024_08_04/ATmega128_UltrasonicSensor.png)
+
+<br>>
+
+### Principle of Operation
+![ATmega128_UltrasonicSensor_TimingDiagram](/assets/img/2024_08_04/ATmega128_UltrasonicSensor_TimingDiagram.png)
+
+<br>
+
+![Atmega128_UltrasonicSensor_PrincipleOfOperationAtmega128_UltrasonicSensor_PrincipleOfOperation](/assets/img/2024_08_04/Atmega128_UltrasonicSensor_PrincipleOfOperation.png)
+
+
+<br><br>
+
+## IR Sensor 관련 개념
+
+IR Sensor는 발광부와 수광부로 구성되어 있습니다. 발광부는 빛을 발사 하는 센서입니다. 
+
+- White Object는 Light를 대부분 반사합니다.
+- Black Object는 Light를 대부분 흡수합니다.
+- 따라서 IR Sensor로 White와 Black을 구분할 수 있습니다.
+
+![ATmega128_IR_Sensor](/assets/img/2024_08_04/ATmega128_IR_Sensor.png)
+
+
+### Light Emitting Diode
+발광부(Light Emitting Diode)는 빛을 발사합니다.<br>
+
+| Spec | Description |
+| :---: | :---:|
+| Positive Voltage | Light Emitting Part의 긴 다리와 연결합니다. |
+| Negative Voltage | Light Emitting Part의 짧은 다리와 연결합니다. |
+
+
+### Light Receiving Diode
+수광부(Light Receiving Diode)는 발광부에서 발사되어 반사된 빛을 흡수합니다.
+| Spec | Description |
+| :---: | :---:|
+| Positive Voltage | Light Receiving Part의 짧은 다리와 연결합니다. |
+| Negative Voltage | Light Receiving Part의 긴 다리와 연결합니다. |
+
+<br>
+
+### Phototransistor
+
+- Phototransistor는 Base Connection(단자)이 Light에 의해 Enable됩니다.
+- 일반적인 BJT에서 Base PIN의 역할을 Outside Light(외부 광선)이 대신 합니다.
+- Outside Light의 양에 비례하여 transistor를 지나는 전류의 크기가 변합니다.
+
+![ATmega128_Outside_Light_Conversion](/assets/img/2024_08_04/ATmega128_Outside_Light_Conversion.png)
+
+<br><br>
+
+## Filter
+Filter는 통상적인 의미로 특정 성질을 가진 것을 차단하거나 통과 시키는 기능을 담당합니다.
+
+[Type]<br>
+-불순물 필터(에어컨, 공기청정기, 정수기, 청소기 등)<br>
+-음향필터(주파수 조절)<br>
+-광학필터(카메라 렌즈)<br>
+-신호처리 필터(임베디드)<br>
+
+<br>
+
+### Analog Filter
+Analog Filter는 Analog Electronic Components([resistor](https://namu.wiki/w/%EB%A0%88%EC%A7%80%EC%8A%A4%ED%84%B0), [capacitor](https://namu.wiki/w/%EC%BB%A4%ED%8C%A8%EC%8B%9C%ED%84%B0), [inductor](https://namu.wiki/w/%EC%9D%B8%EB%8D%95%ED%84%B0), [Operational Amplifier](https://namu.wiki/w/%EC%97%B0%EC%82%B0%20%EC%A6%9D%ED%8F%AD%EA%B8%B0)(연산 증폭기) 등)으로 구성된 circuit이 Filter의
+역할을 수행합니다.
+
+e.g)<br>
+- Low Pass Filter(저역통과필터)
+- High Pass Filter(고역통과필터)
+
+Analog Filter는 noise를 완전히 제거하지 못하기에, Digital Filter를 적용해야 합니다.
+
+### Digital Filter
+ADC Converter를 통해 Conversion된 Digital Input Signal을 이용하는 방식의 Filter이며 programming을 통해 noise를 제거합니다. programming의 특성상 User의 request에 맞게 수정이 가능하므로 다양한 방면에 활용될 수 있습니다.
+
+e.g)<br>
+- Median(중간값) -> 일정 개수의 data를 받아 순서대로 sorting하여 median을 extract(추출)합니다.
+- Average(평균값) -> 일정 개수의 data를 받아 average를 구합니다.
+- Moving average(이동평균) -> Sensor의 data를 들어오는 순서대로 새롭게 Update하여 average(평균치)를 구합니다.
+
+### Max-Min Normalization
+Max-Min Normalization(최대-최소 정규화)를 통해 Sensor Value의 범위가 차이 나는 경우 Normalization을 통해서 0과 1 사이의 값으로 conversion할 수 있으며, 더 쉽게 사용할 수 있습니다.
+
+![ATmega128_Normalization_Formula](/assets/img/2024_08_04/ATmega128_Normalization_Formula.png)
+
+
+
 
 
