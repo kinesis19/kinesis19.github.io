@@ -927,3 +927,13 @@ Timer OVF Interrupt Cycle Calculation
 
 ### Fast PWM Mode
 ![ATmega128_PWM_Fast_Mode](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode.png)
+
+![ATmega128_PWM_Fast_Mode_Frequency](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode_Frequency.png)
+
+### Phase Correct PWM Mode (126P)
+![Phase Correct PWM Mode (126P)](/assets/img/2024_08_04/ATmega128_PWM_Mode_Phase_Correct_128.png)
+
+### Fast PWM Mode (125P)
+![Fast PWM Mode (125P)](/assets/img/2024_08_04/ATmega128_PWM_Fast_Mode_125P.png)
+
+
