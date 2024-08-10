@@ -897,7 +897,7 @@ Timer OVF Interrupt Cycle Calculation
 <br>
 
 ### Timer OVF Interrupt Calculation
-![alt text](ATmega128_Timer_OVF_Interrupt_Cycle_Calculation_Method.png)
+![](/assets/img/2024_08_04/ATmega128_Timer_OVF_Interrupt_Cycle_Calculation_Method.png)
 
 <br><br>
 
@@ -953,7 +953,7 @@ Timer OVF Interrupt Cycle Calculation
 - 외부 Signal의 발생 Time을 알아내는 용도로 활용됩니다.
 - PWM 측정, 기간 측정, Event Time Capture
 
-![ATmega128_InputCapture](/assets/img/2024_08_04/ATmega128_InputCapture.png)ss
+![ATmega128_InputCapture](/assets/img/2024_08_04/ATmega128_InputCapture.png)
 
 <br><br>
 
@@ -961,7 +961,7 @@ Timer OVF Interrupt Cycle Calculation
 ### Electric Parameter
 ![ATmega128_UltrasonicSensor](/assets/img/2024_08_04/ATmega128_UltrasonicSensor.png)
 
-<br>>
+<br>
 
 ### Principle of Operation
 ![ATmega128_UltrasonicSensor_TimingDiagram](/assets/img/2024_08_04/ATmega128_UltrasonicSensor_TimingDiagram.png)
