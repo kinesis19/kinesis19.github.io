@@ -407,6 +407,7 @@ TCCR1A(Timer/Counter1 Control Register A)는 Working Mode(동작 모드)와 Pres
 
 ![ATmega128_TCCRnA_Mode](/assets/img/2024_08_04/ATmega128_TCCRnA_Mode.png)
 
+
 <br>
 
 ### TCCR1B
