@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-09-02T15:33:13+09:00</updated>
+  <updated>2024-09-02T18:45:02+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,45 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>KGDCon 2024 Review</title>
+    <link href="http://localhost:4000/posts/Korea_Game_Developer_Conference_2024/" rel="alternate" type="text/html" title="KGDCon 2024 Review" />
+    <published>2024-09-02T15:00:00+09:00</published>
+  
+    <updated>2024-09-02T15:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Korea_Game_Developer_Conference_2024/</id>
+    <content src="http://localhost:4000/posts/Korea_Game_Developer_Conference_2024/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="ATmega128" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      본 포스트는 KGDCon(Korea Game Developer Conference) 2024에 방문한 후기를 정리한 포스트입니다.
+
+
+
+Reivew
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -264,63 +303,6 @@ A포트에 전체 5V를 출력합니다.
 
 1. 지도학습
 지도학습은 정답을 알고 있...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Baram Seminar DeepLearning Day1</title>
-    <link href="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" rel="alternate" type="text/html" title="Baram Seminar DeepLearning Day1" />
-    <published>2024-03-18T12:30:00+09:00</published>
-  
-    <updated>2024-08-04T20:03:19+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Baram-Seminar-DL-Day1/</id>
-    <content src="http://localhost:4000/posts/Baram-Seminar-DL-Day1/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Baram" />
-    
-    <category term="Seminar" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  오늘은 광운대학교 로봇학부 동아리인 바람에서 진행하는 딥러닝 세미나에 참석했습니다.
-오늘은 딥러닝 세미나 1일차입니다.
-대학교에 진학해서 처음으로 참여하는 세미나여서 그런지 더욱 기대가 되었습니다.
-지금부터, 딥러닝 세미나 1일차에 참여하여 배우고 생각한 내용들을 정리하여 기록해 보겠습니다.
-
-
-
-
-왜 AI를 공부해야 하는가?
-
-  제가 꿈꾸는 로봇을 만들기 위해서 AI를 공부해야 합니다.
-
-
-그렇기에 저는 AI를 공부해야만 합니다.
-그렇다면 제가 꿈꾸는 로봇은 무엇일까요? 
-1. 내가 생생하게 꿈꾸는 로봇은
-제일 우선으로 만들고 싶은 로봇은 안드로이드입니다.
-휴머노이드와 안드로이드는 비슷하게 보이지만 다른 개념입니다.
-휴머노이드가 아닌 안드로이드를 만들고 싶은 이유는 다음과 같습니다.
-
-  나노...
     </summary>
   
 
