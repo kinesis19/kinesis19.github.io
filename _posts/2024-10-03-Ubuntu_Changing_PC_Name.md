@@ -19,7 +19,7 @@ toc: true
 ## Ubuntu에서 hostname 변경하기
 hostname을 변경하기 위해서는 /etc/hostname 과 /etc/hosts 파일을 수정해야 한다.
 
-변경 전 작성자의 hostname : kineiss-nanolist
+변경 전 작성자의 hostname : kineiss-nanolist<br>
 변경 후 작성자의 hostname : nanolist
 
 ### 1. /etc/hostname 파일 수정하기
