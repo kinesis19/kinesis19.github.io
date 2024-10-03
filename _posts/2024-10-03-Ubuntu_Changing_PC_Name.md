@@ -2,7 +2,7 @@
 title: Ubuntu에서 hostname(PC이름) 변경하기
 author: cotes
 date: 2024-10-04 06:00:00 +0900
-categories: [OS 설치하기]
+categories: [Ubuntu]
 tags: [Ubuntu, Command, Tutorial]
 render_with_liquid: false
 toc: true
