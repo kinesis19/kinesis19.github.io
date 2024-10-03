@@ -58,6 +58,7 @@ Ubuntu는 리눅스 기반의 오픈 소스 운영 체제로, Canonical이라는
 Ubuntu를 설치할 때 그냥 Booting USB로 설치를 진행해도 되지만, 안정성을 위해 파티션 분할을 먼저 진행했다.
 
 먼저 윈도우 화면에 보이는 윈도우 버튼을 우클릭한다.
+
 ![img1](/assets/img/2024_10_03/Ubuntu_Install_with_usb/img1.jpg)
 <center>[윈도우 버튼]</center>
 <br>
