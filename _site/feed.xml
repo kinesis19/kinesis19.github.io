@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Kinesis's Blog</title>
   <subtitle>Hi there! It's me, Kinesis. I develop games using Unity, Redbrick and any other program. My dream is to develop my own Android like 'Nano' of webtoon 'Nano List'. I also want to rescue and help people by creating rescue robots that can be used on the battlefield.</subtitle>
-  <updated>2024-10-03T21:44:17+09:00</updated>
+  <updated>2024-10-04T02:00:59+09:00</updated>
   <author>
     <name>Kinesis</name>
     <uri>http://localhost:4000/</uri>
@@ -20,21 +20,74 @@
 
   
   <entry>
-    <title>Windows11 부팅 USB 만들기</title>
-    <link href="http://localhost:4000/posts/Windows_Booting/" rel="alternate" type="text/html" title="Windows11 부팅 USB 만들기" />
-    <published>2024-10-03T18:00:00+09:00</published>
+    <title>Ubuntu를 부팅 USB로 설치하기</title>
+    <link href="http://localhost:4000/posts/Ubuntu_Install_with_usb/" rel="alternate" type="text/html" title="Ubuntu를 부팅 USB로 설치하기" />
+    <published>2024-10-03T23:00:00+09:00</published>
   
-    <updated>2024-10-03T18:00:00+09:00</updated>
+    <updated>2024-10-03T23:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/Windows_Booting/</id>
-    <content src="http://localhost:4000/posts/Windows_Booting/" />
+    <id>http://localhost:4000/posts/Ubuntu_Install_with_usb/</id>
+    <content src="http://localhost:4000/posts/Ubuntu_Install_with_usb/" />
     <author>
       <name>cotes</name>
     </author>
 
   
     
-    <category term="우분투 설치하기" />
+    <category term="OS 설치하기" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      본 포스트는 프리도스 환경의 노트북에서 우분투(22.04)를 설치하는 방법에 대하여 안내하고 있다.
+
+
+
+준비물
+
+  Ubuntu를 설치할 노트북 * 1
+  Ubuntu Booting USB(8GB이상) * 1
+  유선 마우스 * 1
+
+
+작성자 환경
+
+  Ubuntu를 설치할 노트북 * 1
+  Ubuntu Booting USB(8GB이상) * 1
+  유선 마우스 * 1
+
+
+시작하기 전에..
+Ubuntu를 설치하는 방법은 다양하다. 이번에는 로빛 17기이신 주장님의 포스트를 참고하여 진행하였다. 나 역시 주장님께서 포스트 하신 방법대로 진행할 예정이며, 느낀 부분과 실패한 케이스를 위주로 이번 포스트를 작성하려고 한다. 주장님의 설치 방법을 보고 진행할 사람들은 아래 포스트를 참고하는 게 도움이 될 것이...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Windows11 부팅 USB로 설치하기</title>
+    <link href="http://localhost:4000/posts/Windows11_Install_with_usb/" rel="alternate" type="text/html" title="Windows11 부팅 USB로 설치하기" />
+    <published>2024-10-03T18:00:00+09:00</published>
+  
+    <updated>2024-10-03T22:42:42+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Windows11_Install_with_usb/</id>
+    <content src="http://localhost:4000/posts/Windows11_Install_with_usb/" />
+    <author>
+      <name>cotes</name>
+    </author>
+
+  
+    
+    <category term="OS 설치하기" />
     
   
 
@@ -216,76 +269,6 @@ Index : 1 ~ 18 (Total : 18)
 [13] : OUT3
 [14] : OUT4
 [1...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>ATmega128 개념 정리</title>
-    <link href="http://localhost:4000/posts/ATmega128_Concept_Summary/" rel="alternate" type="text/html" title="ATmega128 개념 정리" />
-    <published>2024-08-04T15:00:00+09:00</published>
-  
-    <updated>2024-08-04T15:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ATmega128_Concept_Summary/</id>
-    <content src="http://localhost:4000/posts/ATmega128_Concept_Summary/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="ATmega128" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      본 포스트는 ATmega128을 공부하면서 처음 접하거나, 이해하지 못 했거나, 궁금한 개념 및 모든 요소에 대한 내용을 공부하고 작성 및 정리하여 관리하는 용도의 포스트입니다.
-
-
-
-Register 정리
-I/O Register
-DDRx
-DDRx(Data Direction Register x)는 각 PIN들의 출력 방향을 I/O으로 설정합니다.
-
-  1 : 출력
-  0 : 입력
-
-
-[예시1]
-DDRA = 0xFF;
-
-A포트를 전체 출력으로 설정합니다.
-
-[예시2]
-DDRD = 0x00;
-
-D포트를 전체 입력으로 설정합니다.
-
-
-
-PORTx
-출력용 데이터 값을 설정합니다.
-
-  1 : 5V (High)
-  0 : 0V (Low)
-
-
-[예시1]
-PORTA = 0xFF;
-
-A포트에 전체 5V를 출력합니다.
-...
     </summary>
   
 
