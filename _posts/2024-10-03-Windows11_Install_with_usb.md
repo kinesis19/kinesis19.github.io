@@ -1,8 +1,8 @@
 ---
-title: Windows11 부팅 USB 만들기
+title: Windows11 부팅 USB로 설치하기
 author: cotes
 date: 2024-10-03 18:00:00 +0900
-categories: [우분투 설치하기]
+categories: [OS 설치하기]
 tags: [Windows, FreeDos, Ubuntu, Tutorial]
 render_with_liquid: false
 toc: true
