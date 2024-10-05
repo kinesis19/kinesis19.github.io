@@ -8,10 +8,7 @@ render_with_liquid: false
 toc: true
 ---
 
-본 포스트는 Ubuntu에서 git을 설치하고 git 환경을 구성하는 방법에 대해 안내하고 있다.
-
-<br><br>
-
+본 포스트는 Ubuntu에서 git을 설치하고 git 환경을 구성하는 방법에 대해 안내하고 있다. <br>
 
 ## 작업 환경
 - Ubuntu(22.04)
@@ -30,8 +27,7 @@ git 설치 페이지 : [https://git-scm.com/downloads/linux](https://git-scm.com
 sudo apt update
 ```
 
-
-그 다음, 명령어를 통해 git을 설치한다. 나는 보통 설치를 진행할 때 `superuser` 권한으로 설치를 진행한다.  
+그 다음, 명령어를 통해 git을 설치한다. 나는 보통 설치를 진행할 때 `superuser` 권한으로 설치를 진행한다.
 
 ```bash
 sudo apt-get install git
@@ -57,14 +53,13 @@ git --version
 <center>[git version 확인]</center>
 <br>
 
-
 ## git 환경 구성하기
 나는 보통 remote(Github)에서 repository를 생성하고, local에서 repository를 clone해서 사용한다. local에서 repository를 생성하고 remote에 publish하는 것 보다, remote에서 repository를 생성하고 local로 clone하는 게 제일 쉽기 때문이다. 물론 local에서 repository를 생성하고 remote에 publish 하는 방법도 알아 두면 나중에 도움이 된다.
 
 clone을 하는 방법도 다양하다. 그중에서 작성자는 **Github CLI(Command Line Interface)**를 선호한다. repository를 관리할 때 인증을 자동으로 처리할 수 있기 때문이다. HTTPS나 SSH와 달리 push나 PR, Clone 등의 작업을 손쉽게 할 수 있다. 따라서 이번 포스트에서는 `gh`를 사용해 clone 하는 방법에 대해 안내하겠다.
 
 ### 1. gh 설치하기
-먼저 패키지 목록을 업데이트하여 최신 상태의 패키지 정보를 가져온다. 
+먼저 패키지 목록을 업데이트하여 최신 상태의 패키지 정보를 가져온다.
 
 ```bash
 sudo apt update
@@ -105,7 +100,6 @@ login 방법을 고를 수 있는데, 다음과 같이 진행하였다.
 
 이후 'Press Ente'가 나타나면 'Enter' 키를 누른다. `Logged in as (UserID)` 을 통해 정상적으로 로그인이 된 것을 알 수 있다.
 
-
 ![img7](/assets/img/2024_10_06/Ubuntu_Install_Git/img7.png)
 <center>[gh 로그인]</center>
 <br>
@@ -118,10 +112,12 @@ login 방법을 고를 수 있는데, 다음과 같이 진행하였다.
 Terminal을 이용해서 생성해도 되고, Ubuntu에서 `Files` 프로그램에 들어가서 폴더를 생성해도 된다.
 
 [Terminal에서 폴더를 생성하는 방법]
+
 ```bash
 mkdir (폴더명)
 ```
-*mkdir: make directory
+
+\*mkdir: make directory
 
 #### 2. 현재 경로를 생성한 폴더 경로로 설정하기
 방금 생성한 폴더 안에다가 repository를 clone할 것이므로 먼저 해당 경로에 들어가준다.
@@ -129,23 +125,49 @@ mkdir (폴더명)
 ```bash
 cd (폴더명)
 ```
-*cd: change directory
+
+\*cd: change directory
 
 ### 2. repository 클론하기(Github)
-Github에서 repository를 생성하는 방법과 각 옵션을 설명하면 포스트의 의도와는 달리 설명이 너무 길어진다. 관련 방법은 구글링을 하거나 아래 공식 문서를 참고하자.
+Github에서 repository를 생성하는 방법과 각 옵션을 설명하면 포스트의 의도와는 달리 설명이 너무 길어진다. 관련 내용은 구글링을 하거나 아래 공식 문서를 참고하자.
 
 공식문서: [새 리포지토리 만들기](https://docs.github.com/ko/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
-[옵션1] repository를 생성할 때, README파일이나 .gitignore, license 등의 파일을 추가하고 생성했다면 다음과 같은 화면일 것이다. 우측에 있는 `Code` 버튼을 클릭하고, `Github CLI` 항목을 선택한 후에 아래에 있는 명령어를 복사한다.
+[방법1] repository를 생성할 때, README파일이나 .gitignore, license 등의 파일을 추가하고 생성했다면 다음과 같은 화면일 것이다. 우측에 있는 `Code` 버튼을 클릭하고, `Github CLI` 항목을 선택한 후에 아래에 있는 명령어를 복사한다.
 
-[옵션2] repository를 생성할 때, 아무것도 추가하지 않고 생성하면 다음과 같은 상태일 것이다. 당황하지 말고 생성한 repository의 이름만 확인하자. 작성자 같은 경우에는 repository 이름이 `repo_test2`이다.
+![img8](/assets/img/2024_10_06/Ubuntu_Install_Git/img8.png)
+<center>[repository 생성 - 방법1]</center>
+<br>
+
+[방법2] repository를 생성할 때, 아무것도 추가하지 않고 생성하면 다음과 같은 상태일 것이다. 당황하지 말고 생성한 repository의 이름만 확인하자. 작성자 같은 경우에는 repository 이름이 `repo_test2`이다.
+
+![img9](/assets/img/2024_10_06/Ubuntu_Install_Git/img9.png)
+<center>[repository 생성 - 방법2]</center>
+<br>
 
 이제 아까 실행한 terminal을 띄운다. 이때, 생성한 폴더로 경로가 지정되어 있어야 한다.
 
 [예시]
+
 ```bash
 (UserName)@(hostname):~/(폴더명)$
 ```
 
+![img10](/assets/img/2024_10_06/Ubuntu_Install_Git/img10.png)
+<center>[terminal 상태]</center>
+<br>
 
-이렇게 clone을 
+[방법1] 같은 경우는 이 상태에서 바로 붙여 넣기(`Ctrl` + `Shift` + `V`) 해주면 된다. [방법2] 같은 경우에는 다음 명령어를 입력하면 된다.
+
+```bash
+gh repo clone kinesis19/repo_test2
+```
+
+![img11](/assets/img/2024_10_06/Ubuntu_Install_Git/img11.png)
+<center>[Clone 완료]</center>
+<br>
+
+[방법2] 같은 경우에는 remote에서 repository를 생성할 때, 파일을 추가하지 않고 생성했기에 경고 문구가 terminator에 출력 된 것을 알 수 있다. 빈 repository를 clone 했다고 알려주는 것이므로 무시해줘도 좋다.
+
+## 마무리
+지금까지 Ubuntu에 git을 설치하고 환경 구성까지 해보았다. 설명한 구성이 가장 기본적이다. 여기서 추가로 본인이 원하는 패키지를 설치해 환경을 구성해 나아가면 된다. 이후에는 꼭 필요한 git 명령어에 대해서도 다뤄보겠다.
