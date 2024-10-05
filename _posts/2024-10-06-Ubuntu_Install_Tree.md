@@ -1,11 +1,13 @@
 ---
 title: Ubuntu에서 tree 설치하기
+description: "Ubuntu 22.04에서 tree 명령어 설치 및 사용법에 대한 튜토리얼" # SEO & SNS 미리보기 (검색 노출을 위함)
 author: cotes
 date: 2024-10-06 04:00:00 +0900
 categories: [Ubuntu]
 tags: [Ubuntu, Command, Tutorial]
 render_with_liquid: false
 toc: true
+image: "/assets/img/2024_10_06/Ubuntu_Install_Tree/img1.png"  # 썸네일 (검색 노출을 위함)
 ---
 
 본 포스트는 Ubuntu에서 tree를 설치하는 방법에 대해 알아보겠다.<br>
