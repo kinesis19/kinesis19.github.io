@@ -97,6 +97,145 @@ Qt Creator가 설치 되었다. 그러면 여기서 끝인가? 그건 아니다.
 Kit 설정을 확인해 보자. `[Tools]` -> `[Options]` -> `[Kit]` 순으로 진입하면 된다. 하단에 `Qt version`이 `None`으로 되어 있다. 이럴수가. 그렇다. Qt5는 설치 되어 있어도 할당이 되지 않았다. 왜 그런지는 모르겠는데, 무튼 할당이 안 되어 있는 상태이다. 여기서 Qt5를 할당하는 것 보다는, 주장님께서 말씀하신 Qt6 설치를 하고 Qt Creator에 할당해 보려고 한다.
 
 ![img9](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img9.png)
-<center>[프로젝트 생성 후 모습 (Run 비활성화 상태)]</center>
+<center>[Qt가 할당되지 않은 상태]</center>
 <br>
 
+## Qt6 설치하기
+
+Qt6를 설치를 할 때 나 같은 경우에는 기본 모듈만 설치했다. 결국 나도 이후에는 추가 라이브러리를 설치했다. 내가 추천하는 방식은 처음부터 모든 라이브러리 패키지를 설치하는 것이다. 이번 포스트에서는 기본 라이브러리 설치 이후 모든 라이브러리를 설치하는 방식으로 진행하겠다.
+
+
+[Qt6 - 기본 라이브러리만 설치하기]
+```bash
+sudo apt install qt6-base-dev
+```
+
+[Qt6 - 모든 라이브러리 설치하기] **(추천)**
+```bash
+sudo apt install qtcreator libqt6*
+```
+
+
+설치를 했으면 Qt가 정상적으로 설치 되었는지 확인해야 한다. 다음 명령어를 입력해 Qt가 정상적으로 설치 되었는지 확인해 보자.
+
+```bash
+qmake --version
+```
+
+명령어를 입력했는데도 qmake를 찾을 수 없다는 문구가 나타난다면 Qt를 제대로 설치하거나 직접 경로를 수정해 줘야 한다.
+
+![img10](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img10.png)
+<center>[qt를 찾을 수 없는 상태]</center>
+<br>
+
+설치된 qmake의 경로를 확인하고 싶으면 다음 명령어를 입력해서 확인해 보자.
+
+```bash
+which qmake
+```
+
+![img11](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img11.png)
+<center>[설치된 Qt 경로 찾기]</center>
+<br>
+
+Qt6 설치가 잘 되었다면, `usr/lib/qt6/bin/qmake` 경로가 Terminaotr에 나타날 것이다. 나 같은 경우에는 경로 설정이 잘못 되어 있으므로 다음 명령어를 입력해 경로를 수정했다.
+
+[qmake 경로 확인하기]
+```bash
+find / -name qmake 2>/dev/null
+```
+
+![img12](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img12.png)
+<center>[qt 경로 모음]</center>
+<br>
+
+[경로 수정하기] (명령어는 한 줄씩 나눠서 입력하기)
+```bash
+export PATH=/usr/lib/qt6/bin:$PATH
+echo 'export PATH=/usr/lib/qt6/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+sudo ln -sf /usr/lib/qt6/bin/qmake /usr/bin/qmake
+```
+
+## Qt Creator에서 Qt6 할당하기
+
+이후에 `qmake --version`을 입력하면 Qmake version과 사용하고 있는 Qt version이 나타난다. 이러면 정상적으로 설치된 것이다.
+
+![img13](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img13.png)
+<center>[qt 경로 수정]</center>
+<br>
+
+qmake와 Qt를 모두 정상적으로 설치했다. 이제 qtcreator에서 사용할 qt version을 직접 할당해 줘야 한다.
+
+`[Tools]` -> `[Options]` -> `[Kit]` -> `[Qt Versions]`에서 `Add` 버튼을 눌러 qmake를 추가해 줘야 한다. 아까 확인한 경로 `/usr/lib/qt6/bin/`에 있는 `qmake`를 선택해 준다.
+
+![img14](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img14.png)
+<center>[qmake 선택 및 추가]</center>
+<br>
+
+이제 다음 사진과 같이 Qt Versions에 Qt 6.x.x(qt6)가 설치된 것을 확인할 수 있다. 여기서 왼쪽에 노란색 경고 아이콘이 보이는데, 나같은 경우에는 qml이 설치 되지 않아서 발생한 문제이다. 우선 내가 진행할 프로젝트는 당장 qml을 사용하지 않으므로 넘어가겠다. qml 설치 관련해서는 나중에 포스트를 작성하겠다.
+
+![img15](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img15.png)
+<center>[qt 추가 완료]</center>
+<br>
+
+추가로, `[Tools]` -> `[Options]` -> `[Kit]` 하단에 Qt Verion이 `None` 상태일텐데, 설치한 Qt Version `6.x.x(qt6)`으로 선택해야 한다.
+
+![img16](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img16.png)
+<center>[qt 선택]</center>
+<br>
+
+## CMake 설치 및 할당하기
+
+Qt까지 지정하고 qt creator를 확인해봐도 아직 `Build`와 `Run` 버튼이 비활성화 되어 있다. 다음 명령어를 입력해 cmake를 설치한다.
+
+```bash
+sudo apt install cmake
+```
+
+![img17](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img17.png)
+<center>[Build, Run 비활성화 상태]</center>
+<br>
+
+camke를 설치하면 다음 사진과 같이 `Build`버튼과 `Run` 버튼이 활성화 된 것을 확인할 수 있다.
+
+![img18](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img18.png)
+<center>[Build, Run 활성화 상태]</center>
+<br>
+
+이후에 Qt Creator를 재실행한다. `[Tools]` -> `[Options]` -> `[Kit]` 하단에 `CMake Tool` 항목이 존재한다. `System CMake at ~~~`으로 선택되어 있으면 CMake 추가부터 자동 설정까지 잘 된 상태이다. 만약 빈 공간으로 되어 있으면 바로 오른쪽에 있는 `Manage` 버튼을 눌러 직접 할당해 준다.
+
+![img19](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img19.png)
+<center>[CMake 할당된 상태]</center>
+<br>
+
+다시 `[Edit]` 화면으로 돌아와서 기본으로 추가된 main.cpp 파일을 Build하고 Run을 해본다. 다음 사진과 같이 `Application Output`에 `Hello World!`가 나타났다.
+
+![img20](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img20.png)
+<center>[Code Build & Run]</center>
+<br>
+
+## Output Method 변경하기
+
+Terminal로 출력하고 싶은 사람은 `[Tools]` -> `[Options]` -> `Build & Run`에서 `Defaultfor "Run in terminal"` 항목을 `Enabled`로 활성화 해준다. 추가로, `Save all files before build` 항목을 체크하여 활성화 해주는 것을 추천한다.
+
+![img21](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img21.png)
+<center>[Terminal 활성화]</center>
+<br>
+
+다시 Build하고 Run을 통해 Output이 Terminal로 지정된 것을 확인할 수 있다.
+
+![img22](/assets/img/2024_10_04/Ubuntu_Install_QT_Creator/img22.png)
+<center>[Terminal에서 Output 확인]</center>
+<br>
+
+## Qt6 추가 라이브러리 설치하기 (선택)
+위에서 안내한 [Qt6 모든 라이브러리](#qt6-설치하기)를 설치해 보겠다. 설치한 이후, Qt Creator에서 기존에 있던 Qt6를 삭제하고, 자동 인식이 안 되는 것을 고려하여 경로를 똑같이 지정해 주기만 하면 된다.
+
+```bash
+sudo apt install qtcreator libqt6*
+```
+
+
+## 마무리
+이렇게 이번 포스트에서는 Qt Creator과 Qt6, CMake를 설치하는 방법에 대해 알아보았다. 이후에 Qt Creator에서 프로젝트를 생성하고 git에 연동해서 실행하는 방법에 대해서도 다뤄볼 예정이다.
