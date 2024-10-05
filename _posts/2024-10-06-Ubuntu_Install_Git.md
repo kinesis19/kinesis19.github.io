@@ -173,7 +173,7 @@ gh repo clone kinesis19/repo_test2
 gh repo clone kinesis19/(방법2 repository name)
 ```
 
-[방법2]같은 경우에는 remote에서 repository를 생성할 때, 파일을 추가하지 않고 생성했기에 경고 문구가 terminator에 출력 된 것을 알 수 있다. 빈 repository를 clone 했다고 알려주는 것이므로 무시해줘도 좋다.
+remote에서 repository를 생성할 때, 파일을 추가하지 않고 생성했기에 경고 문구가 terminator에 출력 된 것을 알 수 있다. 빈 repository를 clone 했다고 알려주는 것이므로 무시해줘도 좋다.
 
 ## 마무리
 지금까지 Ubuntu에 git을 설치하고 환경 구성까지 해보았다. 설명한 구성이 가장 기본적이다. 여기서 추가로 본인이 원하는 패키지를 설치해 환경을 구성해 나아가면 된다. 이후에는 꼭 필요한 git 명령어에 대해서도 다뤄보겠다.
