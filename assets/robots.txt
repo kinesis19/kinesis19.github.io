@@ -1,9 +1,0 @@
----
-permalink: /robots.txt
-# The robots rules
----
-
-User-agent: *
-
-Disallow: /norobots/
-Sitemap: https://kinesis19.github.io/sitemap.xml
