@@ -1,6 +1,6 @@
 ---
-title: 파사드 패턴 개념 정리(강의 - 얄팍한 코딩사전)
-description: "객체지향 디자인 패턴(OODP) 중 하나인 파사드(Facade) 패턴에 대한 개념정리" # SEO & SNS 미리보기 (검색 노출을 위함)
+title: 퍼사드 패턴 개념 정리(강의 - 얄팍한 코딩사전)
+description: "객체지향 디자인 패턴(OODP) 중 하나인 퍼사드(Facade) 패턴에 대한 개념정리" # SEO & SNS 미리보기 (검색 노출을 위함)
 author: cotes
 date: 2024-10-10 03:24:00 +0900
 categories: [Programming, DesignPatterns]
@@ -16,4 +16,5 @@ image:  # 썸네일 (검색 노출을 위함)
 
 ## 선수 지식
 
+ 
  
