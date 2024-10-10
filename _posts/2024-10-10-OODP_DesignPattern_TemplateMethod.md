@@ -144,7 +144,6 @@ image:  # 썸네일 (검색 노출을 위함)
 함께 보면 좋은 자료는 다음과 같다.
 - [SOLID 원칙과 객체지향 설계의 기본 정리(강의 - 얄팍한 코딩사전)](https://kinesis19.github.io/posts/SOLID_DesignPatterns/) by **Kinesis** - 객체지향 설계 원칙인 SOLID에 대한 상세 설명이 되어 있다.
 - [Template Method](https://refactoring.guru/design-patterns/template-method) by **Refactoring.Guru** - 템플릿 메소드(Template Method) 패턴을 사용해야 하는 이유와 장단점 등에 대하여 설명하고 있다(디자인 패턴의 바이블 같은 플랫폼이 Refactoring.Guru이기에 애용하는 습관을 키우자).
-- [전략 패턴(Strategy Pattern)](https://devjino.tistory.com/49) by **지노원** - 전략 패턴에 대하여 스타크래프트를 예시로 설명이 되어 있다.
 - [💠 템플릿 메소드(Template Method) 패턴 - 완벽 마스터하기](https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A9%94%EC%86%8C%EB%93%9CTemplate-Method-%ED%8C%A8%ED%84%B4-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90) by **Inpa** - 템플릿 메소드(Template Method) 패턴에 대한 개념이 자세하게 설명되어 있다(하단에 전략 패턴과 템플릿 메소드 패턴의 차이점에 대해 설명하고 있으니 한 번 보는 것도 괜찮다)
 - [Factory Method](https://42jerrykim.github.io/collections/designpattern/03_factory_method/#gsc.tab=0) by **Jerry Kim** - 팩토리 메소드에 대하여 설명이 잘 되어 있다
 
