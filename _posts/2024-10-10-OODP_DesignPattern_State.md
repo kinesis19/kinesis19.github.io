@@ -2,7 +2,7 @@
 title: 상태 패턴 개념 정리(강의 - 얄팍한 코딩사전)
 description: "객체지향 디자인 패턴 중 하나인 상태(State) 패턴에 대한 개념 정리 및 예제 코드" # SEO & SNS 미리보기 (검색 노출을 위함)
 author: cotes
-date: 2024-10-12 12:00:00 +0900
+date: 2024-10-10 12:00:00 +0900
 categories: [Programming, DesignPatterns]
 tags: [OODP, 객체지향, 프로그래밍, 디자인 패턴, 개발]
 render_with_liquid: false
