@@ -106,7 +106,7 @@ State 패턴을 이해하기 위해 필요한 선수 지식은 다음과 같다.
 
 #### 4. 클라이언트(main함수)
 
-![img6](/assets/img/2024_10_10/OODP_DesignPattern_Singleton/img6.png)
+![img6](/assets/img/2024_10_10/OODP_DesignPattern_State/img6.png)
 <center> [클라이언트(main함수)] </center><br>
 
 - 상태 전환: `SetState()` 메소드를 사용하여 캐릭터의 상태를 `WalkingState`, `JumpingState`, `AttackingState`로 변경하고, 각각의 상태에서 `HandleInput()`을 호출하여 상태에 따른 동작을 출력한다.
