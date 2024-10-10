@@ -75,6 +75,8 @@ Singleton 패턴을 이해하기 위해 필요한 선수 지식은 다음과 같
 ![img1](/assets/img/2024_10_10/OODP_DesignPattern_Singleton/img1.png)
 <center> [main.cpp] </center><br>
 
+![img1_1](/assets/img/2024_10_10/OODP_DesignPattern_Singleton/img1_1.png)
+<center> [실행 결과] </center><br>
 
 
 한 눈에 코드를 보기 위해 선언부(.h)와 구현부(.cpp)로 분리하지 않고, main.cpp에서 통합하여 코드를 구현했다. 
