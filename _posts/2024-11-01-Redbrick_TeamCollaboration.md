@@ -8,6 +8,7 @@ tags: [redbrick, 개발]
 render_with_liquid: false
 toc: true
 image:  # 썸네일 (검색 노출을 위함)
+pin: true #
 ---
 
 ## 들어가며
