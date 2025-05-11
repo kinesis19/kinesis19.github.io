@@ -30,5 +30,5 @@ I aspire to develop rescue robots that can save lives on the battlefield.
 ### Work Experience Education
 - Redbrick [@Redbrick](https://redbrick.land/)
     - Creator Internship Program (Part-time) (2024.06.24. ~ 2024.09.22.)
-- Seoul Municipal Changdong Youth Center [@cdyouth](http://www.cdyouth.or.kr/)
+- Seoul Municipal Changdong Youth Center [@cdyouth](https://www.instagram.com/cdyouthcenter/)
     - Mentor, 'RPG' Club (Freelance, Part-time) (2025.03.15. ~ Present)
