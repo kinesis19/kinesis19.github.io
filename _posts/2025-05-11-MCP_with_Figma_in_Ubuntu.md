@@ -66,4 +66,4 @@ sudo dpkg -i ./claude-desktop_0.9.3_amd64.deb
 
 ~~그러나, 창의 사이즈 대응 관련 이슈는 아직 해결되지 않았다. (패키지 자체 이슈인 듯)~~
 
-[img1](/assets/img/2025_05_11/MCP_with_Figma_in_Ubuntu/img1.png)
+![img1](/assets/img/2025_05_11/MCP_with_Figma_in_Ubuntu/img1.png)
