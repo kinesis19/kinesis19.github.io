@@ -1,9 +1,24 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+I’m Kinesis Akashic
+I aspire to develop rescue robots that can save lives on the battlefield.
 
-::github{repo="saicaca/fuwari"}
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+## 🔎 Areas of interest
+- Mobile Robot
+- Embedded System
+- Simulation
+- Devleop Game
+- System Architecture
+## 📖 Education & Work Experience
+### Education
+
+- Kwangwoon Univ [@KW Univ](https://www.kw.ac.kr/ko/)
+    - B.S in Division of Robotics (2024.03. ~ Present)
+- ROːBIT, Undergraduate Student Lab [@Team ROːBIT](https://github.com/Team-ROBIT)
+    - 19th Member. Intelligence Robot Team (2024.07. ~ Present)
+
+### Work Experience Education
+- Redbrick [@Redbrick](https://github.com/Redbrick-Inc)
+    - Creator Internship Program (Part-time) (2024.06.24. ~ 2024.09.22.)
+- Seoul Municipal Changdong Youth Center [@cdyouth](http://www.cdyouth.or.kr/)
+    - Mentor, ‘RPG’ Club (Freelance, Part-time) (2025.03.15. ~ Present)
