@@ -19,6 +19,7 @@ pnpm build # ./dist/에 프로덕션 사이트 구축
 pnpm preview # 배포하기 전, 로컬에서 빌드 미리보기
 ```
 
+## 3.2. 사이트 배포하기
 이후 정상적으로 빌드가 완료되면 origin에 반영해줍니다.
 ```bash
 git add .
