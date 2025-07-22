@@ -1,7 +1,7 @@
 ---
 title: GitHub Pages와 Fuwari로 나만의 기술 블로그 만들기(2)
 published: 2025-07-22
-description: Fuwari 템플릿을 사용하여 블로그를 커스터마이징 하는 방법에 대해 다룹니다.
+description: Fuwari 템플릿을 사용하여 블로그를 커스터마이징 및 콘텐츠를 작성하는 방법에 대해 다룹니다.
 tags: [Tutorial, Gitblog]
 category: Tutorial
 draft: false
@@ -10,8 +10,8 @@ draft: false
 # 작업 환경
 - Ubuntu 22.04
 
-# 2단계: 블로그 커스터마이징
-
+# 2단계: 블로그 커스터마이징 및 콘텐츠 작성하기
+## 2.1. 블로그 커스터마이징하기
 가장 먼저 블로그의 이름, 설명, 작성자 정보 등을 수정합니다. 대부분의 설정은 `src/config.ts` 파일에서 관리됩니다.
 
 아래와 같이 정보를 수정합니다.
@@ -109,3 +109,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+## 2.2. 콘텐츠 작성하기
+콘텐츠는 마크다운 문법으로 작성할 수 있습니다. Fuwari에서는 마크다운 문법 외에도 다양한 기능을 제공하고 있으니 적절하게 응용하여 콘텐츠 내용을 작성할 수 있습니다.
+
+콘텐츠 작성 예시: [Simple Guides for Fuwari](https://fuwari.vercel.app/posts/guide/)
+
+작성을 완료하면 다음과 같이 나타납니다.
+
+![kinesis blog home](img2.png)
+
+![blog content](img3.png)
