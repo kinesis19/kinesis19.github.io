@@ -10,8 +10,8 @@ draft: false
 # 작업 환경
 - Ubuntu 22.04
 
-
-# 1.1. 프로그램 설치
+# 1단계: 개발 환경 준비 및 Fuwari 템플릿 설치
+## 1.1. 프로그램 설치
 - Git: 소스 코드를 관리하고 Github와 연동하기 위한 필수 프로그램입니다.
 - Node.js: Astro 프로젝트를 실행하기 위한 JavaScript 런타임환경입니다. LTS(Long-Term-Support) 버전을 설치합니다.
     - [Node.js 공식 홈페이지](https://nodejs.org/ko/download)에서 LTS 버전을 다운로드하여 설치합니다. (2025년 7월 14일 기준 v20 이상의 버전을 사용해야 합니다.)
@@ -31,7 +31,7 @@ pnpm --version
 이후 [Fuwari 공식 README.md](https://github.com/saicaca/fuwari/blob/main/README.md)에서 명시된 버전을 준수하였는지 확인합니다.
 ![fuwari readme image](img2.png)
 
-# 1.2. Fuwari 템플릿 fork & run
+## 1.2. Fuwari 템플릿 fork & run
 [Fuwari 공식 repository](https://github.com/saicaca/fuwari)에서 우측 상단에 있는 `Fork` 버튼을 클릭합니다.
 
 - `Repository name`: 생성할 repository(저장소)의 이름입니다. Github에서 Github Pages 기능을 제공하기에 `<username>.github.io` 형식으로 설정하는 것을 추천합니다.
