@@ -26,10 +26,10 @@ node --version
 npm --version
 pnpm --version
 ```
-![terminator image](/src/content/posts/how-to-make-gitblog-tutorial-1/img1.png)
+![terminator image](img1.png)
 
 이후 [Fuwari 공식 README.md](https://github.com/saicaca/fuwari/blob/main/README.md)에서 명시된 버전을 준수하였는지 확인합니다.
-![fuwari readme image](/src/content/posts/how-to-make-gitblog-tutorial-1/img2.png)
+![fuwari readme image](img2.png)
 
 # 1.2. Fuwari 템플릿 fork & run
 [Fuwari 공식 repository](https://github.com/saicaca/fuwari)에서 우측 상단에 있는 `Fork` 버튼을 클릭합니다.
@@ -39,10 +39,10 @@ pnpm --version
 - `Description`: repository의 설명을 작성합니다.
 
 모든 설정을 완료했다면, 좌측 하단에 있는 `Create fork` 버튼을 클릭합니다.
-![repository fork image](/src/content/posts/how-to-make-gitblog-tutorial-1/img3.png)
+![repository fork image](img3.png)
 
 fork한 repository에서 `Code` 버튼을 클릭하고, 현재 repository의 Web URL을 복사합니다.
-![repository clone image](/src/content/posts/how-to-make-gitblog-tutorial-1/img4.png)
+![repository clone image](img4.png)
 복사한 URL은 다음과 같은 형식으로 구성되어 있습니다.
 ```bash
 https://github.com/kinesis19/kinesis19.github.io.git
@@ -58,17 +58,17 @@ cd kinesis19.github.io # 경로 진입
 ```bash
 pnpm install
 ```
-![pnpm install](/src/content/posts/how-to-make-gitblog-tutorial-1/img5.png)
+![pnpm install](img5.png)
 
 로컬 개발 서버를 시작합니다.
 ```bash
 pnpm dev
 ```
 
-![pnpm dev](/src/content/posts/how-to-make-gitblog-tutorial-1/img6.png)
+![pnpm dev](img6.png)
 
 화면에 나타난 Local address를 `Ctrl + Left Click` 혹은 인터넷 브라우저에 입력하여 진입합니다.
 
 정상적으로 개발 환경이 구축된 것을 알 수 있습니다.
 
-![local address](/src/content/posts/how-to-make-gitblog-tutorial-1/img7.png)
+![local address](img7.png)
