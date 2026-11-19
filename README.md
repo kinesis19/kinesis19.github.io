@@ -110,6 +110,19 @@ npm run preview    # 빌드 결과 확인
   3. DNS(kashic.dev)에 `portfolio` **CNAME → `kinesis19.github.io`** 레코드 추가
 - `public/CNAME` 파일이 커스텀 도메인을 유지합니다. 지우지 마세요.
 
+### GitHub Actions 를 쓸 수 없을 때 (대체 배포)
+
+계정 문제 등으로 Actions 가 실행되지 않으면, 내 컴퓨터에서 빌드해서 `gh-pages` 브랜치로 올릴 수 있습니다.
+
+1. `npm run deploy` : 사이트를 빌드하고 결과물을 로컬 `gh-pages` 브랜치에 커밋합니다. (push 는 하지 않습니다)
+   - `npm run deploy -- --dry` 는 빌드만 하고 어떤 파일이 올라갈지 보여 줍니다.
+2. `git push origin gh-pages`
+3. 처음 한 번만: Settings → Pages → **Source = Deploy from a branch**, Branch = `gh-pages` / `(root)`
+   (Custom domain 은 그대로 `portfolio.kashic.dev`. `CNAME` 파일이 결과물에 포함되어 있습니다.)
+4. 이후 수정할 때마다 `main` 에 커밋 → `npm run deploy` → `git push origin gh-pages`
+
+Actions 가 다시 정상이 되면 Source 를 **GitHub Actions** 로 되돌리고 `gh-pages` 브랜치는 지워도 됩니다.
+
 ## 7. 폴더 구조
 
 ```
