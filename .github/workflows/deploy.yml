@@ -18,12 +18,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install, build, and upload site
-        uses: withastro/action@v2
-        with:
-          node-version: 22
+      - name: Checkout your repository using git
+        uses: actions/checkout@v7
+      - name: Install, build, and upload your site
+        uses: withastro/action@v6
+        # with:
+        #   node-version: 24 # 기본값(24). 다른 버전이 필요하면 주석을 풀고 변경
+        #   package-manager: npm # package-lock.json 으로 자동 감지됩니다
 
   deploy:
     needs: build
@@ -34,4 +35,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
