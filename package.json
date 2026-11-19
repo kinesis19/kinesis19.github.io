@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "optimize-images": "node scripts/optimize-images.mjs",
-    "make-og": "node scripts/make-og.mjs"
+    "make-og": "node scripts/make-og.mjs",
+    "deploy": "node scripts/deploy-branch.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
