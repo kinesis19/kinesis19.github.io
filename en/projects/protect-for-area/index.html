@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Protect for Area (3D Defense Shooter) | Kinesis</title><meta name="description" content="A defense game I built solo in Unity 3D, with a JSON-based data persistence system and hands-on use of the 3D coordinate system."><link rel="canonical" href="https://portfolio.kashic.dev/en/projects/protect-for-area/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/protect-for-area/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/protect-for-area/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/protect-for-area/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="Protect for Area (3D Defense Shooter) | Kinesis"><meta property="og:description" content="A defense game I built solo in Unity 3D, with a JSON-based data persistence system and hands-on use of the 3D coordinate system."><meta property="og:url" content="https://portfolio.kashic.dev/en/projects/protect-for-area/"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/images/thumb-protect-for-area.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Protect for Area (3D Defense Shooter) | Kinesis"><meta name="twitter:description" content="A defense game I built solo in Unity 3D, with a JSON-based data persistence system and hands-on use of the 3D coordinate system."><meta name="twitter:image" content="https://portfolio.kashic.dev/images/thumb-protect-for-area.webp"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.B5_lc6fo.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/en/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/en/#top" data-nav="home">HOME</a><a href="/en/#profile" data-nav="profile">PROFILE</a><a href="/en/#projects" data-nav="projects">PROJECTS</a><a href="/en/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/projects/protect-for-area/" data-lang-switch="ko" hreflang="ko" aria-label="한국어로 보기">KO</a> <a class="btn" href="/en/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/en/#projects">← All projects</a> <div id="project-detail" class="pd" data-slug="protect-for-area" data-category="Software"> <h2 class="pd-title">Protect for Area (3D Defense Shooter)</h2> <div class="pd-hero"><img src="/images/thumb-protect-for-area.webp" alt=""></div> <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2022</b></div><div><small>ROLE</small><b>Solo developer</b></div><div><small>TEAM</small><b>Solo</b></div><div><small>CATEGORY</small><b>Software &amp; Games</b></div> </div>  <p class="pd-ov">A defense game I built solo in Unity 3D, with a JSON-based data persistence system and hands-on use of the 3D coordinate system.</p> <div class="doc prose prose-invert max-w-none"><h2 id="1-overview">1. Overview</h2>
+<p>A 3D shooting defense game developed in five intensive days through Bucheon University’s Zepet Studio “Unity Short Academy”.
+The goal is to protect a safe area from waves of alien ships, and players can upgrade their craft through a shop system.</p>
+<ul>
+<li><strong>Period:</strong> 2022.01.10 ~ 2022.01.14 (5 days)</li>
+<li><strong>Role:</strong> Solo development (planning, 3D modeling, development)</li>
+<li><strong>Result:</strong> Selected as a <strong>scholarship student</strong> of the Unity Short Academy</li>
+</ul>
+<h2 id="2-key-features">2. Key Features</h2>
+<ul>
+<li><strong>Defense system:</strong> wave logic that manages the area’s HP and the player’s health while holding off enemies</li>
+<li><strong>Shop &#x26; upgrades:</strong> spend collected coins to strengthen bullets (unlocking skills), magazine capacity, area health and reload speed</li>
+<li><strong>Infinite scroll:</strong> the background scrolls endlessly to convey the speed and immersion of flight</li>
+</ul>
+<h2 id="3-technical-implementation-engineering-logic">3. Technical Implementation (Engineering Logic)</h2>
+<p>This project focused on <strong>data management</strong> and <strong>understanding 3D space</strong>.</p>
+<h3 id="json-data-serialization-data-persistence">JSON data serialization (data persistence)</h3>
+<p>Instead of plain <code>PlayerPrefs</code>, I adopted <strong>JSON</strong>, which is more extensible and secure, to manage game data.</p>
+<ul>
+<li><strong>Implementation:</strong> I built a system that serializes the player’s currency, upgrade state and high score into a JSON file, saves it locally and loads it back.</li>
+<li><strong>Takeaway:</strong> a deeper understanding of structured data exchange.</li>
+</ul>
+<h3 id="controlling-3d-coordinates-vector3--transform">Controlling 3D coordinates (Vector3 &#x26; Transform)</h3>
+<p>Unlike 2D, 3D adds a Z axis, and I learned to control objects in that environment.</p>
+<ul>
+<li><strong>Learning:</strong> I used <code>Vector3</code> and <code>Quaternion</code> to calculate bullet firing angles and enemy paths, and controlled live positions through the <code>Transform</code> component.</li>
+</ul>
+<h2 id="4-what-i-gained">4. What I Gained</h2>
+<ul>
+<li><strong>3D modeling:</strong> I designed the player craft and enemy ships myself, experiencing the 3D asset production process.</li>
+<li><strong>Problem solving:</strong> moving beyond clone-coding, I used Google searches and official documentation to design and apply “features of my own” (the shop and skills).</li>
+</ul>
+<hr>
+<h2 id="5-gameplay">5. Gameplay</h2>
+<p><img src="/images/protect-for-area-shop.webp" alt="Shop and upgrade screen">
+<em>The shop system, where data is saved as JSON</em></p>
+<p><img src="/images/protect-for-area-play.webp" alt="Combat gameplay">
+<em>Defense combat in 3D space</em></p>
+<h2 id="6-demo-video">6. Demo Video</h2>
+<div class="aspect-video w-full mt-4">
+  <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/wUh_Z_ylrH8?si=qt-jsDK6tD3IB49p" title="Minecraft RPG Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+</div></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"></path></svg> </span>Unity </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"/></svg> </span>C# </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg> </span>3D Game </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4c-2 0-3 1-3 3v2c0 1-1 2-2 3 1 1 2 2 2 3v2c0 2 1 3 3 3M16 4c2 0 3 1 3 3v2c0 1 1 2 2 3-1 1-2 2-2 3v2c0 2-1 3-3 3"/></svg> </span>JSON </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> </span>Solo Dev </span></div></div>  </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>

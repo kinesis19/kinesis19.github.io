@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Time-Limited Life (Web Zombie RPG) | Kinesis</title><meta name="description" content="A browser-based 2D zombie RPG built with JavaScript (ES6) and the RedBrick engine, with turn-based combat logic and web resource optimization."><link rel="canonical" href="https://portfolio.kashic.dev/en/projects/time-limited-life/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/time-limited-life/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/time-limited-life/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/time-limited-life/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="Time-Limited Life (Web Zombie RPG) | Kinesis"><meta property="og:description" content="A browser-based 2D zombie RPG built with JavaScript (ES6) and the RedBrick engine, with turn-based combat logic and web resource optimization."><meta property="og:url" content="https://portfolio.kashic.dev/en/projects/time-limited-life/"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/images/thumb-time-limited-life.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Time-Limited Life (Web Zombie RPG) | Kinesis"><meta name="twitter:description" content="A browser-based 2D zombie RPG built with JavaScript (ES6) and the RedBrick engine, with turn-based combat logic and web resource optimization."><meta name="twitter:image" content="https://portfolio.kashic.dev/images/thumb-time-limited-life.webp"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.B5_lc6fo.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/en/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/en/#top" data-nav="home">HOME</a><a href="/en/#profile" data-nav="profile">PROFILE</a><a href="/en/#projects" data-nav="projects">PROJECTS</a><a href="/en/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/projects/time-limited-life/" data-lang-switch="ko" hreflang="ko" aria-label="한국어로 보기">KO</a> <a class="btn" href="/en/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/en/#projects">← All projects</a> <div id="project-detail" class="pd" data-slug="time-limited-life" data-category="Software"> <h2 class="pd-title">Time-Limited Life (Web Zombie RPG)</h2> <div class="pd-hero"><img src="/images/thumb-time-limited-life.webp" alt=""></div> <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2022</b></div><div><small>ROLE</small><b>Solo developer</b></div><div><small>TEAM</small><b>Solo</b></div><div><small>CATEGORY</small><b>Software &amp; Games</b></div> </div>  <p class="pd-ov">A browser-based 2D zombie RPG built with JavaScript (ES6) and the RedBrick engine, with turn-based combat logic and web resource optimization.</p> <div class="doc prose prose-invert max-w-none"><h2 id="1-overview">1. Overview</h2>
+<p>This is my entry for the “2022 RedBrick Creator Challenge Season 4” contest.
+It is a 2D turn-based RPG set in a zombie apocalypse, built so that it runs right in the browser with no installation. I implemented all the core elements of an RPG on my own: exploration, combat, a shop and a ranking system.</p>
+<ul>
+<li><strong>Period:</strong> 2022.06.28 ~ 2022.08.14</li>
+<li><strong>Role:</strong> Solo development (planning, design, overall development)</li>
+<li><strong>Result:</strong> <strong>Award winner</strong>, 2022 RedBrick Creator Challenge Season 4</li>
+</ul>
+<h2 id="2-key-features">2. Key Features</h2>
+<ul>
+<li><strong>Combat system:</strong> turn-based strategy combat built on the type matchups of three elements, fire, water and grass (a rock-paper-scissors logic)</li>
+<li><strong>Exploration and economy:</strong> spend action points to explore regions, and buy or upgrade items and skins with the currency you earn (N-Coin)</li>
+<li><strong>Ranking system:</strong> survival days (D-Day) are scored and reflected in a server ranking</li>
+</ul>
+<h2 id="3-technical-challenges-engineering--optimization">3. Technical Challenges (Engineering &#x26; Optimization)</h2>
+<p>This project was an attempt to <strong>understand and work around platform constraints</strong>.</p>
+<h3 id="web-resource-optimization-resource-management">Web resource optimization (resource management)</h3>
+<p>In a web game, using high-resolution resources carelessly slowed loading and caused lag.</p>
+<ul>
+<li><strong>Problem:</strong> unlike an installed app, browser memory limits made asset size management essential.</li>
+<li><strong>Solution:</strong> I optimized the size of in-game resources and cut unnecessary computation. I couldn’t include every high-resolution asset, but I came to feel <strong>how important resource management is in hardware-constrained environments (such as embedded systems)</strong>.</li>
+</ul>
+<h3 id="combat-algorithm-logic-design">Combat algorithm (logic design)</h3>
+<p>Instead of plain attacks, I implemented interactions between elements.</p>
+<ul>
+<li><strong>Logic:</strong> I designed the cyclic matchup <code>Fire > Grass > Water > Fire</code> with conditionals, and applied an algorithm in which the damage multiplier changes depending on the player’s and the monster’s choices.</li>
+</ul>
+<h2 id="4-what-i-gained">4. What I Gained</h2>
+<ul>
+<li><strong>Understanding cross-platform:</strong> I experienced the advantage of a web game that runs on both PC and mobile without a separate build.</li>
+<li><strong>System integration:</strong> I designed the structure so that modules like the inventory, shop, settings (coupons, sound) and ranking exchange data with each other seamlessly.</li>
+</ul>
+<hr>
+<h2 id="5-gameplay">5. Gameplay</h2>
+<p><img src="/images/time-limited-life-combat.webp" alt="Combat interface">
+<em>Turn-based combat using the elemental matchups (water, fire, grass)</em></p>
+<p><img src="/images/time-limited-life-credit.webp" alt="Credits">
+<em>Credits screen</em></p>
+<h2 id="6-tutorial-video">6. Tutorial Video</h2>
+<div class="aspect-video w-full mt-4">
+  <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/-1u-7GLbhuU?si=as_tF9-PUnR1cviX" title="Minecraft RPG Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+</div></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"></path></svg> </span>JavaScript </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg> </span>Web Game </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-5"/></svg> </span>Optimization </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="4"/><path d="M8 11v4M6 13h4M15 12h.01M18 14h.01"/></svg> </span>Game Logic </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> </span>Solo Dev </span></div></div>  </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>

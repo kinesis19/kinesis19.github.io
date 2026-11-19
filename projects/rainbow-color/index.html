@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Choosing Rainbow Color (3D Hyper-casual Game) | Kinesis</title><meta name="description" content="JavaScript와 RedBrick 엔진을 활용한 3D 서바이벌 게임. setInterval 기반의 게임 루프 및 랜덤 스폰 알고리즘 구현."><link rel="canonical" href="https://portfolio.kashic.dev/projects/rainbow-color/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/rainbow-color/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/rainbow-color/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/rainbow-color/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="Choosing Rainbow Color (3D Hyper-casual Game) | Kinesis"><meta property="og:description" content="JavaScript와 RedBrick 엔진을 활용한 3D 서바이벌 게임. setInterval 기반의 게임 루프 및 랜덤 스폰 알고리즘 구현."><meta property="og:url" content="https://portfolio.kashic.dev/projects/rainbow-color/"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/images/thumb-rainbow-color.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Choosing Rainbow Color (3D Hyper-casual Game) | Kinesis"><meta name="twitter:description" content="JavaScript와 RedBrick 엔진을 활용한 3D 서바이벌 게임. setInterval 기반의 게임 루프 및 랜덤 스폰 알고리즘 구현."><meta name="twitter:image" content="https://portfolio.kashic.dev/images/thumb-rainbow-color.webp"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.B5_lc6fo.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/#top" data-nav="home">HOME</a><a href="/#profile" data-nav="profile">PROFILE</a><a href="/#projects" data-nav="projects">PROJECTS</a><a href="/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/en/projects/rainbow-color/" data-lang-switch="en" hreflang="en" aria-label="Switch to English">EN</a> <a class="btn" href="/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/#projects">← 프로젝트 목록</a> <div id="project-detail" class="pd" data-slug="rainbow-color" data-category="Software"> <h2 class="pd-title">Choosing Rainbow Color (3D Hyper-casual Game)</h2> <div class="pd-hero"><img src="/images/thumb-rainbow-color.webp" alt=""></div> <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2023</b></div><div><small>ROLE</small><b>1인 개발 (World Director)</b></div><div><small>TEAM</small><b>개인</b></div><div><small>CATEGORY</small><b>소프트웨어 &amp; 게임</b></div> </div>  <p class="pd-ov">JavaScript와 RedBrick 엔진을 활용한 3D 서바이벌 게임. setInterval 기반의 게임 루프 및 랜덤 스폰 알고리즘 구현.</p> <div class="doc prose prose-invert max-w-none"><h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<p>레드브릭(RedBrick)과 한국인디게임협회가 주관한 <strong>인디 개발자 상생 프로젝트</strong>에 선정된 3D 하이퍼 캐주얼 게임입니다.
+제한 시간 내에 열쇠를 찾아내고, 무작위로 파괴되는 발판 위에서 살아남아야 하는 서바이벌 게임입니다. <strong>‘REDBRICK 23’ INDI CHALLENGERS’</strong> 인증을 획득했습니다.</p>
+<ul>
+<li><strong>진행 기간:</strong> 2023.02.27 ~ 2023.04.30</li>
+<li><strong>역할:</strong> 1인 개발 (World Director) - 기획, 3D 월드 제작, 스크립팅</li>
+<li><strong>성과:</strong> 2023 레드브릭 x 한국인디게임협회 <strong>인디 개발자 상생 프로젝트 선정</strong></li>
+</ul>
+<h2 id="2-핵심-로직-및-알고리즘-core-logic">2. 핵심 로직 및 알고리즘 (Core Logic)</h2>
+<p><code>script.js</code>에 구현된 주요 알고리즘과 엔지니어링 포인트입니다.</p>
+<h3 id="비동기-게임-루프-asynchronous-game-loop">비동기 게임 루프 (Asynchronous Game Loop)</h3>
+<p><code>setInterval</code> 함수를 활용하여 1초 단위로 게임 상태를 체크하는 코어 루프를 설계했습니다.</p>
+<ul>
+<li><strong>Timer &#x26; State Check:</strong> 매초 타이머(<code>timerCount</code>)를 갱신하며, 제한 시간 종료 시 <code>clearInterval</code>로 루프를 제어합니다.</li>
+<li><strong>Win/Loss Condition:</strong> 타이머 종료 시점에 <code>isKeyHave</code>(열쇠 보유 여부)와 <code>isPlayerTouchingFoothold</code>(발판 생존 여부)를 논리 연산자(<code>&#x26;&#x26;</code>)로 판단하여 라운드 승패를 결정합니다.</li>
+</ul>
+<h3 id="랜덤-스폰-알고리즘-randomized-spawning">랜덤 스폰 알고리즘 (Randomized Spawning)</h3>
+<p>매 라운드마다 플레이어에게 새로운 경험을 제공하기 위해 위치 값을 난수화했습니다.</p>
+<ul>
+<li><strong>Key Spawning:</strong> <code>getRandom(1, 7)</code>로 구역을 정하고, 2차 <code>getRandom(1, 3)</code>으로 세부 좌표(x, y, z)를 결정하여 예측 불가능한 위치에 열쇠를 생성합니다.</li>
+<li><strong>Map Destruction:</strong> <code>aryFoothold</code> 배열에 난수 값을 할당하고, 특정 임계값(<code>> 7</code>)을 넘는 발판 객체(<code>objFoothold[i]</code>)를 <code>kill()</code> 메서드로 파괴하여 동적인 맵 변화를 구현했습니다.</li>
+</ul>
+<h3 id="객체-상호작용-및-이벤트-처리">객체 상호작용 및 이벤트 처리</h3>
+<ul>
+<li><strong>Collision Detection:</strong> <code>onCollide</code> 이벤트를 통해 플레이어와 발판/아이템 간의 접촉을 감지하고, <code>selectHoldNum</code> 변수로 현재 위치 상태를 실시간으로 관리했습니다.</li>
+<li><strong>Trap Mechanics:</strong> 움직이는 장애물(<code>moveY</code>)과 회전하는 트랩(<code>rotateY</code>)의 좌표 연산을 통해 방해 요소를 구현했습니다.</li>
+</ul>
+<h2 id="3-개발-경험">3. 개발 경험</h2>
+<ul>
+<li><strong>Project Lifecycle:</strong> 기획부터 알고리즘 설계, 구현, QA, 공모전 출품까지 1인 개발의 전 과정을 완주했습니다.</li>
+<li><strong>JavaScript 활용:</strong> 변수 스코프 관리, 배열 처리, 비동기 타이머 등 ES6 문법을 실제 게임 로직에 적용하며 언어 이해도를 높였습니다.</li>
+</ul>
+<hr>
+<h2 id="4-플레이-영상">4. 플레이 영상</h2>
+<p>Choosing Rainbow Color 플레이 데모</p>
+<div class="aspect-video w-full mt-4">
+  <iframe class="w-full h-full rounded-xl border border-neutral-800" src="https://www.youtube.com/embed/9_hgpJxI2AE?si=xcCbtei_k81k_tJp" title="Choosing Rainbow Color Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+</div>
+<h2 id="5-수상-및-인증">5. 수상 및 인증</h2>
+<p><img src="/images/rainbow-color-cert.webp" alt="인디 챌린저스 인증서">
+<em>2023 REDBRICK INDI CHALLENGERS 인증서 (한국인디게임협회)</em></p></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"></path></svg> </span>JavaScript </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="4"/><path d="M8 11v4M6 13h4M15 12h.01M18 14h.01"/></svg> </span>Game Logic </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="9" r="2"/><path d="M6 7v10M18 11c0 4-6 3-12 6"/></svg> </span>Algorithm </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> </span>Solo Dev </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4v1a3 3 0 0 0 4 3M16 6h4v1a3 3 0 0 1-4 3M12 13v4M8 20h8"/></svg> </span>Award </span></div></div> <div class="pd-links"> <a class="btn" href="https://github.com/kinesis19/Choosing_Rainbow_Color" target="_blank" rel="noopener">GitHub Repository ↗</a> </div> </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>
