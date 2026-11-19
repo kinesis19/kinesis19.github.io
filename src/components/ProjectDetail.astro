@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import { getDict, type Lang } from '../i18n';
+import { yearOf, type Item, type ProjectEntry } from '../lib/content';
+import Tool from './Tool.astro';
+interface Props { lang: Lang; item: Item<ProjectEntry> }
+const { lang, item } = Astro.props;
+const t = getDict(lang);
+const { entry, fallback } = item;
+const d = entry.data;
+const { Content } = await render(entry);
+const meta: [string, string][] = [
+  [t.projects.meta.year, String(yearOf(d.date))],
+  ...(d.role ? ([[t.projects.meta.role, d.role]] as [string, string][]) : []),
+  ...(d.team ? ([[t.projects.meta.team, d.team]] as [string, string][]) : []),
+  [t.projects.meta.category, t.domains[d.category].name],
+];
+---
+{/* 이 블록(#project-detail)이 상세 페이지와 홈의 슬라이드 패널에 똑같이 사용됩니다. */}
+<div id="project-detail" class="pd" data-slug={item.slug} data-category={d.category}>
+  <h2 class="pd-title">{d.title}</h2>
+  {d.image && <div class="pd-hero"><img src={d.image} alt="" /></div>}
+  <div class="pd-meta" style={`grid-template-columns:repeat(${meta.length},1fr)`}>
+    {meta.map(([k, v]) => <div><small>{k}</small><b>{v}</b></div>)}
+  </div>
+  {fallback && <p class="pd-notice">{t.projects.fallbackNotice}</p>}
+  <p class="pd-ov">{d.summary}</p>
+  <div class="doc prose prose-invert max-w-none"><Content /></div>
+  {d.tags.length > 0 && <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools">{d.tags.map((n) => <Tool name={n} />)}</div></div>}
+  {d.links.length > 0 && (
+    <div class="pd-links">
+      {d.links.map((l, i) => <a class={`btn${i ? ' o' : ''}`} href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}
+    </div>
+  )}
+</div>

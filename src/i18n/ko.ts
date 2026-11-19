@@ -1,0 +1,98 @@
+// 한국어 텍스트. 화면에 보이는 문구는 대부분 이 파일에서 수정합니다.
+// ({n}, {a}, {b} 는 숫자가 들어가는 자리이니 그대로 두세요.)
+export const ko = {
+  htmlLang: 'ko',
+  meta: {
+    title: 'Kinesis | Robotics & Embedded Engineer',
+    description:
+      'ROS 2 로봇 소프트웨어, STM32 회로 설계, 무선 통신까지. 소프트웨어가 하드웨어를 움직이는 모든 지점을 만드는 Kinesis의 포트폴리오.',
+  },
+  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'EN', langSwitchLabel: 'Switch to English' },
+  hero: {
+    role: 'Robotics & Embedded Engineer',
+    tagBefore: '코드를',
+    tagEm: '현실의',
+    tagAfter: '움직임으로.',
+    summary:
+      'ROS 2 로봇 소프트웨어, STM32 회로 설계, 무선 통신까지. 소프트웨어가 하드웨어를 움직이는 모든 지점을 만듭니다.',
+    ctaProjects: '프로젝트 보기',
+    ctaResume: '이력서 PDF ↓',
+    base: 'BASE',
+    since: 'SINCE',
+    focus: 'FOCUS',
+  },
+  profile: {
+    title: 'PROFILE',
+    lead: '저는 <b>소프트웨어가 하드웨어를 움직이게 만드는</b> 모든 지점에 관심이 있는 엔지니어입니다. ROS 2로 로봇의 두뇌를 만들고, PCB를 직접 설계합니다. 시작은 웹과 게임이었습니다.',
+    role: 'ROBOT ENGINEER',
+    labels: { base: 'Base', focus: 'Focus', since: 'Since', status: 'Status' },
+    openToWork: 'Open to work',
+    photoHint: 'PHOTO',
+    badges: { github: 'GitHub', linkedin: 'LinkedIn', email: 'Email', resume: 'Resume' },
+  },
+  domains: {
+    Robotics: {
+      name: '로보틱스',
+      sub: 'ROS 2',
+      desc: 'ROS 2 기반의 로봇 소프트웨어를 다룹니다.',
+    },
+    Circuits: {
+      name: '회로 설계',
+      sub: '전원 · PCB',
+      desc: '로봇의 전원부를 직접 설계하고, 실장 후 디버깅까지 합니다.',
+    },
+    Communication: {
+      name: '통신',
+      sub: 'ROS 2 DDS · Zenoh DDS · UART · I2C',
+      desc: '노드 사이의 신호를 설계하고 오실로스코프로 검증합니다.',
+    },
+    Software: {
+      name: '소프트웨어 & 게임',
+      sub: 'Unity · JavaScript · Web',
+      desc: '웹과 게임 개발로 시작했습니다. 지금도 툴과 소규모 게임을 만듭니다.',
+    },
+  },
+  projects: {
+    title: 'PROJECTS',
+    intro: '대표 프로젝트를 먼저 보여 드리고, 아래에서 카테고리별로 둘러볼 수 있습니다. 카드를 누르면 페이지 이동 없이 상세가 열립니다.',
+    browseTitle: '카테고리별로 보기',
+    count: '{n} projects',
+    comingSoon: '아직 등록된 프로젝트가 없습니다. 곧 추가됩니다.',
+    viewAll: '전체 {n}개 보기 ↓',
+    collapse: '접기 ↑',
+    more: '더 보기 ({n})',
+    search: '검색 (제목, 기술)',
+    shownOf: '{a}개 중 {b}개 표시',
+    all: '전체',
+    sort: { rec: '추천순', new: '최신순', old: '오래된순' },
+    empty: '조건에 맞는 프로젝트가 없습니다.',
+    close: '닫기',
+    prev: '← PREV',
+    next: 'NEXT →',
+    meta: { year: 'YEAR', role: 'ROLE', team: 'TEAM', category: 'CATEGORY' },
+    fallbackNotice: '이 프로젝트는 아직 번역되지 않아 원문(한국어)으로 표시됩니다.',
+    backToProjects: '← 프로젝트 목록',
+  },
+  journal: {
+    title: 'JOURNAL',
+    intro: '만들면서 부딪힌 문제와 배운 것들의 기록.',
+    empty: '아직 작성된 글이 없습니다.',
+    viewAll: '전체 글 보기 →',
+    back: '← 저널 목록',
+    pageTitle: '저널',
+  },
+  contact: {
+    lineA: "Let's",
+    lineB: 'build',
+    lineC: 'it.',
+    text: '로봇, 회로, 통신 등 같이 만들어 볼 일이 있다면 편하게 연락 주세요.',
+    ctaEmail: '이메일 보내기',
+    ctaGithub: 'GitHub 보기',
+    ctaResume: '이력서 PDF ↓',
+    labels: { email: 'Email', github: 'GitHub', linkedin: 'LinkedIn', location: 'Location' },
+  },
+  footer: '© {year} Kinesis · portfolio.kashic.dev',
+  notFound: { title: '페이지를 찾을 수 없습니다', back: '홈으로 돌아가기' },
+};
+
+export type Dict = typeof ko;

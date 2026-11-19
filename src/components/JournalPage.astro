@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Tool from './Tool.astro';
+import { getDict, localePath, type Lang } from '../i18n';
+import { dotDate, type Item, type JournalEntry } from '../lib/content';
+interface Props { lang: Lang; item: Item<JournalEntry> }
+const { lang, item } = Astro.props;
+const t = getDict(lang);
+const d = item.entry.data;
+const { Content } = await render(item.entry);
+const path = (l: Lang) => localePath(l, `/journal/${item.slug}/`);
+---
+<Base lang={lang} title={d.title} description={d.summary} image={d.image} paths={{ ko: path('ko'), en: path('en') }}>
+  <main class="page-detail">
+    <div class="wrap narrow">
+      <a class="back-link" href={localePath(lang, '/journal/')}>{t.journal.back}</a>
+      <article class="pd">
+        <span class="tg">{d.category.toUpperCase()} · {dotDate(d.date)}</span>
+        <h2 class="pd-title">{d.title}</h2>
+        {item.fallback && <p class="pd-notice">{t.projects.fallbackNotice}</p>}
+        <p class="pd-ov">{d.summary}</p>
+        {d.image && <div class="pd-hero"><img src={d.image} alt="" /></div>}
+        <div class="doc prose prose-invert max-w-none"><Content /></div>
+        {d.tags.length > 0 && <div class="pd-sec"><div class="tools">{d.tags.map((n) => <Tool name={n} />)}</div></div>}
+      </article>
+    </div>
+  </main>
+</Base>

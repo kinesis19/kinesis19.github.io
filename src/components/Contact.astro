@@ -1,0 +1,32 @@
+---
+import { getDict, type Lang } from '../i18n';
+import { profile } from '../data/profile';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const L = t.contact.labels;
+---
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="cc">
+      <div class="rv">
+        <h2>{t.contact.lineA}<br /><em>{t.contact.lineB}</em> {t.contact.lineC}</h2>
+        <p>{t.contact.text}</p>
+        <div class="cta">
+          {profile.email
+            ? <a class="btn" href={`mailto:${profile.email}`}>{t.contact.ctaEmail}</a>
+            : <a class="btn" href={profile.github} target="_blank" rel="noopener">{t.contact.ctaGithub}</a>}
+          {profile.resume && <a class="btn w" href={profile.resume} target="_blank" rel="noopener">{t.contact.ctaResume}</a>}
+        </div>
+      </div>
+      <div class="ccard rv">
+        <dl>
+          {profile.email && (<><dt>{L.email}</dt><dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd></>)}
+          <dt>{L.github}</dt><dd><a href={profile.github} target="_blank" rel="noopener">{profile.github.replace('https://', '')}</a></dd>
+          {profile.linkedin && (<><dt>{L.linkedin}</dt><dd><a href={profile.linkedin} target="_blank" rel="noopener">{profile.linkedin.replace('https://', '').replace('www.', '')}</a></dd></>)}
+          {profile.location && (<><dt>{L.location}</dt><dd>{profile.location}</dd></>)}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

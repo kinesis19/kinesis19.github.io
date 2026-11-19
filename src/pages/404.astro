@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { getDict } from '../i18n';
+const t = getDict('ko');
+---
+<Base lang="ko" title="404" paths={{ ko: '/404/', en: '/en/' }}>
+  <main class="page-detail">
+    <div class="wrap narrow">
+      <div class="st"><span class="no">404</span><h2>{t.notFound.title}</h2></div>
+      <a class="btn" href="/">{t.notFound.back}</a>
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,98 @@
+// English text. Most visible copy on the site is edited here.
+// ({n}, {a}, {b} are number placeholders. Leave them as they are.)
+import type { Dict } from './ko';
+
+export const en: Dict = {
+  htmlLang: 'en',
+  meta: {
+    title: 'Kinesis | Robotics & Embedded Engineer',
+    description:
+      "Portfolio of Kinesis: ROS 2 robot software, STM32 circuit design and wireless communication. I build every point where software moves hardware.",
+  },
+  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'KO', langSwitchLabel: '한국어로 보기' },
+  hero: {
+    role: 'Robotics & Embedded Engineer',
+    tagBefore: 'Turning code into',
+    tagEm: 'real-world',
+    tagAfter: 'motion.',
+    summary:
+      'From ROS 2 robot software and STM32 circuit design to wireless communication, I build every point where software moves hardware.',
+    ctaProjects: 'View projects',
+    ctaResume: 'Resume PDF ↓',
+    base: 'BASE',
+    since: 'SINCE',
+    focus: 'FOCUS',
+  },
+  profile: {
+    title: 'PROFILE',
+    lead: "I'm an engineer fascinated by <b>every point where software moves hardware</b>. I build the brains of robots with ROS 2 and design PCBs myself. It all started with web and games.",
+    role: 'ROBOT ENGINEER',
+    labels: { base: 'Base', focus: 'Focus', since: 'Since', status: 'Status' },
+    openToWork: 'Open to work',
+    photoHint: 'PHOTO',
+    badges: { github: 'GitHub', linkedin: 'LinkedIn', email: 'Email', resume: 'Resume' },
+  },
+  domains: {
+    Robotics: {
+      name: 'Robotics',
+      sub: 'ROS 2',
+      desc: 'I work on robot software built on ROS 2.',
+    },
+    Circuits: {
+      name: 'Circuits',
+      sub: 'Power · PCB',
+      desc: "I design a robot's power stage myself, all the way through bring-up and debugging.",
+    },
+    Communication: {
+      name: 'Communication',
+      sub: 'ROS 2 DDS · Zenoh DDS · UART · I2C',
+      desc: 'I design the signals between nodes and verify them with an oscilloscope.',
+    },
+    Software: {
+      name: 'Software & Games',
+      sub: 'Unity · JavaScript · Web',
+      desc: 'I started with web and game development, and I still build tools and small-scale games.',
+    },
+  },
+  projects: {
+    title: 'PROJECTS',
+    intro: 'Featured projects come first; browse the rest by category below. Click any card to open its details without leaving the page.',
+    browseTitle: 'Browse by category',
+    count: '{n} projects',
+    comingSoon: 'No projects here yet. Coming soon.',
+    viewAll: 'View all {n} ↓',
+    collapse: 'Collapse ↑',
+    more: 'Load more ({n})',
+    search: 'Search (title, tech)',
+    shownOf: 'Showing {b} of {a}',
+    all: 'All',
+    sort: { rec: 'Featured', new: 'Newest', old: 'Oldest' },
+    empty: 'No projects match your filters.',
+    close: 'Close',
+    prev: '← PREV',
+    next: 'NEXT →',
+    meta: { year: 'YEAR', role: 'ROLE', team: 'TEAM', category: 'CATEGORY' },
+    fallbackNotice: 'This project has not been translated yet, so the original (Korean) is shown.',
+    backToProjects: '← All projects',
+  },
+  journal: {
+    title: 'JOURNAL',
+    intro: 'Notes on the problems I ran into and what I learned while building.',
+    empty: 'No posts yet.',
+    viewAll: 'View all posts →',
+    back: '← All posts',
+    pageTitle: 'Journal',
+  },
+  contact: {
+    lineA: "Let's",
+    lineB: 'build',
+    lineC: 'it.',
+    text: "Robots, circuits, communication and more. If you'd like to build something together, get in touch.",
+    ctaEmail: 'Send an email',
+    ctaGithub: 'View GitHub',
+    ctaResume: 'Resume PDF ↓',
+    labels: { email: 'Email', github: 'GitHub', linkedin: 'LinkedIn', location: 'Location' },
+  },
+  footer: '© {year} Kinesis · portfolio.kashic.dev',
+  notFound: { title: 'Page not found', back: 'Back to home' },
+};

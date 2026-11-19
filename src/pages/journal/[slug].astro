@@ -1,0 +1,10 @@
+---
+import JournalPage from '../../components/JournalPage.astro';
+import { getJournal } from '../../lib/content';
+export async function getStaticPaths() {
+  const items = await getJournal('ko');
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+<JournalPage lang="ko" item={item} />

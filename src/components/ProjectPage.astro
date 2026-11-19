@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectDetail from './ProjectDetail.astro';
+import { getDict, localePath, type Lang } from '../i18n';
+import type { Item, ProjectEntry } from '../lib/content';
+interface Props { lang: Lang; item: Item<ProjectEntry> }
+const { lang, item } = Astro.props;
+const t = getDict(lang);
+const d = item.entry.data;
+const path = (l: Lang) => localePath(l, `/projects/${item.slug}/`);
+---
+<Base lang={lang} title={d.title} description={d.summary} image={d.image} paths={{ ko: path('ko'), en: path('en') }}>
+  <main class="page-detail">
+    <div class="wrap narrow">
+      <a class="back-link" href={`${localePath(lang, '/')}#projects`}>{t.projects.backToProjects}</a>
+      <ProjectDetail lang={lang} item={item} />
+    </div>
+  </main>
+</Base>

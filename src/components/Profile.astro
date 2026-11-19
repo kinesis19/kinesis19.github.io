@@ -1,0 +1,66 @@
+---
+import { getDict, type Lang } from '../i18n';
+import { profile } from '../data/profile';
+import { CATEGORIES } from '../lib/categories';
+import { CATEGORY_ICON, githubIconPath, LINKEDIN_PATH, MAIL_PATH, DOC_PATH } from '../lib/icons';
+import Tool from './Tool.astro';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const badges = [
+  { key: 'github', href: profile.github, path: githubIconPath, label: t.profile.badges.github },
+  { key: 'linkedin', href: profile.linkedin, path: LINKEDIN_PATH, label: t.profile.badges.linkedin },
+  { key: 'email', href: profile.email ? `mailto:${profile.email}` : '', path: MAIL_PATH, label: t.profile.badges.email },
+  { key: 'resume', href: profile.resume, path: DOC_PATH, label: t.profile.badges.resume },
+].filter((b) => b.href);
+---
+<section class="band alt" id="profile">
+  <div class="wrap">
+    <div class="st rv"><span class="no">01</span><h2>{t.profile.title}</h2></div>
+    <p class="lead" set:html={t.profile.lead} />
+    <div class="pf">
+      <aside class="pcard rv">
+        <div class="ph">
+          {profile.photo ? (
+            <img src={profile.photo} alt={profile.name} loading="eager" />
+          ) : (
+            <>
+              <em>{t.profile.photoHint}</em>
+              <svg viewBox="0 0 340 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="170" cy="118" r="52" fill="#0a0a0b" /><path d="M60 300c0-70 50-100 110-100s110 30 110 100z" fill="#0a0a0b" /></svg>
+            </>
+          )}
+        </div>
+        <div class="bd">
+          <h3>{profile.name}</h3>
+          <div class="ro">{t.profile.role}</div>
+          <dl>
+            {profile.location && (<><dt>{t.profile.labels.base}</dt><dd>{profile.location}</dd></>)}
+            <dt>{t.profile.labels.focus}</dt><dd>{profile.focus}</dd>
+            <dt>{t.profile.labels.since}</dt><dd>{profile.since}</dd>
+            {profile.openToWork && (<><dt>{t.profile.labels.status}</dt><dd><span class="open">{t.profile.openToWork}</span></dd></>)}
+          </dl>
+          <div class="badges">
+            {badges.map((b) => (
+              <a class="badge" href={b.href} target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={b.path} /></svg>{b.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+      <div class="dom">
+        {CATEGORIES.map((c, i) => (
+          <article class="dc rv">
+            <div class="top">
+              <div class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={CATEGORY_ICON[c]} /></div>
+              <h4>{t.domains[c].name}</h4>
+              <span class="num">0{i + 1}</span>
+            </div>
+            <p>{t.domains[c].desc}</p>
+            <div class="tools">{profile.domains[c].map((n) => <Tool name={n} />)}</div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

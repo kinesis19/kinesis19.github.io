@@ -1,0 +1,27 @@
+---
+import { getDict, type Lang } from '../i18n';
+import { profile } from '../data/profile';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<header class="hero" id="top">
+  <div class="slab"><b aria-hidden="true">K</b></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="role">{t.hero.role}</span>
+      <h1>{profile.name.toUpperCase()}</h1>
+      <h2>{t.hero.tagBefore} <em>{t.hero.tagEm}</em> {t.hero.tagAfter}</h2>
+      <p class="sum">{t.hero.summary}</p>
+      <div class="cta">
+        <a class="btn o" href="#projects">{t.hero.ctaProjects}</a>
+        {profile.resume && <a class="btn w" href={profile.resume} target="_blank" rel="noopener">{t.hero.ctaResume}</a>}
+      </div>
+      <div class="facts">
+        {profile.location && <span><b>{t.hero.base}</b>{profile.location}</span>}
+        <span><b>{t.hero.since}</b>{profile.since}</span>
+        <span><b>{t.hero.focus}</b>{profile.focus}</span>
+      </div>
+    </div>
+  </div>
+</header>

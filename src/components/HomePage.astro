@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from './Hero.astro';
+import Profile from './Profile.astro';
+import Projects from './Projects.astro';
+import JournalRows from './JournalRows.astro';
+import Contact from './Contact.astro';
+import { getDict, localePath, type Lang } from '../i18n';
+import { CATEGORIES } from '../lib/categories';
+import { CATEGORY_ICON } from '../lib/icons';
+import { getJournal, getProjects, toIndex } from '../lib/content';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const projects = await getProjects(lang);
+const journal = await getJournal(lang);
+const index = toIndex(projects, lang);
+
+// 클라이언트 스크립트(src/scripts/home.ts)가 사용하는 데이터
+const clientData = {
+  home: localePath(lang, '/'),
+  categories: CATEGORIES.map((c) => ({ key: c, name: t.domains[c].name, sub: t.domains[c].sub, icon: CATEGORY_ICON[c] })),
+  ui: t.projects,
+  projects: index,
+};
+const json = JSON.stringify(clientData).replace(/</g, '\\u003c');
+---
+<Base
+  lang={lang}
+  paths={{ ko: localePath('ko', '/'), en: localePath('en', '/') }}
+  homeRedirect={lang === 'ko'}
+  isHome
+>
+  <Hero lang={lang} />
+  <Profile lang={lang} />
+  <Projects lang={lang} items={projects} />
+  <section class="band alt" id="journal">
+    <div class="wrap">
+      <div class="st rv"><span class="no">03</span><h2>{t.journal.title}</h2><p>{t.journal.intro}</p></div>
+      <JournalRows lang={lang} items={journal} limit={4} />
+      {journal.length > 4 && <div class="allbar"><a class="btn o" href={localePath(lang, '/journal/')}>{t.journal.viewAll}</a></div>}
+    </div>
+  </section>
+  <Contact lang={lang} />
+
+  {/* 프로젝트 상세: 페이지 이동 없이 열리는 슬라이드 패널 */}
+  <div class="mo" id="mo" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="bk" data-close></div>
+    <div class="slab"></div>
+    <div class="pn" id="pn"></div>
+  </div>
+
+  <script type="application/json" id="home-data" set:html={json}></script>
+  <script>
+    import '../scripts/home';
+  </script>
+</Base>

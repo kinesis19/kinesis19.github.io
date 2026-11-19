@@ -1,0 +1,23 @@
+---
+import { dotDate, type Item, type JournalEntry } from '../lib/content';
+import { localePath, getDict, type Lang } from '../i18n';
+interface Props { lang: Lang; items: Item<JournalEntry>[]; limit?: number }
+const { lang, items, limit } = Astro.props;
+const t = getDict(lang);
+const list = limit ? items.slice(0, limit) : items;
+const total = items.length;
+---
+{list.length === 0 ? (
+  <p class="empty">{t.journal.empty}</p>
+) : (
+  <div class="jl">
+    {list.map(({ slug, entry }, i) => (
+      <a class="jr rv" href={localePath(lang, `/journal/${slug}/`)}>
+        <span class="n">{String(total - i).padStart(2, '0')}</span>
+        <span class="c">{entry.data.category.toUpperCase()}</span>
+        <span class="t">{entry.data.title}</span>
+        <span class="d">{dotDate(entry.data.date)}</span>
+      </a>
+    ))}
+  </div>
+)}

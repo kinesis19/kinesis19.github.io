@@ -1,0 +1,15 @@
+---
+import { getIcon } from '../lib/icons';
+interface Props { name: string }
+const { name } = Astro.props;
+const icon = getIcon(name);
+---
+<span class="tool">
+  <span class="ico">
+    {icon.type === 'fill' ? (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={icon.path} /></svg>
+    ) : (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icon.body} />
+    )}
+  </span>{name}
+</span>

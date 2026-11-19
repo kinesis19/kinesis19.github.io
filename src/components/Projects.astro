@@ -1,0 +1,53 @@
+---
+import { getDict, fmt, type Lang } from '../i18n';
+import { CATEGORIES } from '../lib/categories';
+import { CATEGORY_ICON } from '../lib/icons';
+import { yearOf, type Item, type ProjectEntry } from '../lib/content';
+import { localePath } from '../i18n';
+interface Props { lang: Lang; items: Item<ProjectEntry>[] }
+const { lang, items } = Astro.props;
+const t = getDict(lang);
+const featured = items.filter((i) => i.entry.data.featured).slice(0, 3);
+const count = (c: string) => items.filter((i) => i.entry.data.category === c).length;
+const url = (slug: string) => localePath(lang, `/projects/${slug}/`);
+---
+<section class="band" id="projects">
+  <div class="wrap">
+    <div class="st rv"><span class="no">02</span><h2>{t.projects.title}</h2><p>{t.projects.intro}</p></div>
+
+    {featured.length > 0 && (
+      <div class="feat">
+        {featured.map(({ slug, entry }) => (
+          <a class="fc rv" href={url(slug)} data-slug={slug}>
+            <div class="im" style="aspect-ratio:16/10">
+              {entry.data.image ? <img src={entry.data.image} alt="" loading="lazy" /> : <div class="ph"></div>}
+            </div>
+            <div class="bd">
+              <span class="tg">{t.domains[entry.data.category].name} · {yearOf(entry.data.date)}</span>
+              <h3>{entry.data.title}</h3>
+              <p>{entry.data.summary}</p>
+              <div class="mt">{entry.data.tags.slice(0, 4).join(' · ')}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+
+    <div class="sub"><h3>{t.projects.browseTitle}</h3><span id="catSub"></span></div>
+    <div class="cats" id="cats">
+      {CATEGORIES.map((c) => (
+        <button class="ct" type="button" data-cat={c}>
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={CATEGORY_ICON[c]} /></span>
+          <span><b>{t.domains[c].name}</b><small>{fmt(t.projects.count, { n: count(c) })}</small></span>
+        </button>
+      ))}
+    </div>
+    <div class="bento" id="bento"></div>
+    <div id="allwrap"></div>
+    <noscript>
+      <ul class="ns-list">
+        {items.map(({ slug, entry }) => <li><a href={url(slug)}>{entry.data.title}</a> <small>({entry.data.category}, {yearOf(entry.data.date)})</small></li>)}
+      </ul>
+    </noscript>
+  </div>
+</section>

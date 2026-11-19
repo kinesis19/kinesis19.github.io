@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import JournalRows from './JournalRows.astro';
+import { getDict, localePath, type Lang } from '../i18n';
+import { getJournal } from '../lib/content';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const items = await getJournal(lang);
+---
+<Base lang={lang} title={t.journal.pageTitle} description={t.journal.intro} paths={{ ko: localePath('ko', '/journal/'), en: localePath('en', '/journal/') }}>
+  <main class="page-detail">
+    <div class="wrap">
+      <a class="back-link" href={localePath(lang, '/')}>{t.notFound.back}</a>
+      <div class="st"><span class="no">JOURNAL</span><h2>{t.journal.pageTitle}</h2><p>{t.journal.intro}</p></div>
+      <JournalRows lang={lang} items={items} />
+    </div>
+  </main>
+</Base>
