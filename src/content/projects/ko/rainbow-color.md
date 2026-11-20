@@ -6,7 +6,7 @@ category: Software
 tags: ["JavaScript", "Game Logic", "Algorithm", "Solo Dev", "Award"]
 role: "1인 개발 (World Director)"
 team: "개인"
-featured: true
+featured: false
 image: "/images/thumb-rainbow-color.webp"
 links:
   - label: "GitHub Repository"

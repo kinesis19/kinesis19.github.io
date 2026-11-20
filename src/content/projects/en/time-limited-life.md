@@ -6,7 +6,7 @@ category: Software
 tags: ["JavaScript", "Web Game", "Optimization", "Game Logic", "Solo Dev"]
 role: "Solo developer"
 team: "Solo"
-featured: true
+featured: false
 image: "/images/thumb-time-limited-life.webp"
 ---
 ## 1. Overview

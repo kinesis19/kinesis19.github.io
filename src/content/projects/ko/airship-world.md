@@ -6,7 +6,7 @@ category: Software
 tags: ["RedBrick", "Team Project", "Leadership", "Level Design"]
 role: "World Director (총괄)"
 team: "4인 팀"
-featured: true
+featured: false
 image: "/images/thumb-airship-world.webp"
 ---
 ## 1. 프로젝트 개요

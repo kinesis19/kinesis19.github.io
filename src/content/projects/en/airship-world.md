@@ -6,7 +6,7 @@ category: Software
 tags: ["RedBrick", "Team Project", "Leadership", "Level Design"]
 role: "World Director (lead)"
 team: "Team of 4"
-featured: true
+featured: false
 image: "/images/thumb-airship-world.webp"
 ---
 ## 1. Overview

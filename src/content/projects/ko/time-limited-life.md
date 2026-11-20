@@ -6,7 +6,7 @@ category: Software
 tags: ["JavaScript", "Web Game", "Optimization", "Game Logic", "Solo Dev"]
 role: "1인 개발"
 team: "개인"
-featured: true
+featured: false
 image: "/images/thumb-time-limited-life.webp"
 ---
 ## 1. 프로젝트 개요
