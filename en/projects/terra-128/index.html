@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terra-128 - Soil and Terrain Survey Rover | Kinesis</title><meta name="description" content="An exploration rover that fuses an RGB-D camera, IMU, ultrasonic, pressure and soil-moisture sensors to analyze terrain risk and measure soil. I designed and built the ATmega128 custom control PCB in Altium, and wrote the low-level firmware and sensor filters."><link rel="canonical" href="https://portfolio.kashic.dev/en/projects/terra-128/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/terra-128/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/terra-128/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/terra-128/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="Terra-128 - Soil and Terrain Survey Rover | Kinesis"><meta property="og:description" content="An exploration rover that fuses an RGB-D camera, IMU, ultrasonic, pressure and soil-moisture sensors to analyze terrain risk and measure soil. I designed and built the ATmega128 custom control PCB in Altium, and wrote the low-level firmware and sensor filters."><meta property="og:url" content="https://portfolio.kashic.dev/en/projects/terra-128/"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/images/thumb-terra-128.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Terra-128 - Soil and Terrain Survey Rover | Kinesis"><meta name="twitter:description" content="An exploration rover that fuses an RGB-D camera, IMU, ultrasonic, pressure and soil-moisture sensors to analyze terrain risk and measure soil. I designed and built the ATmega128 custom control PCB in Altium, and wrote the low-level firmware and sensor filters."><meta name="twitter:image" content="https://portfolio.kashic.dev/images/thumb-terra-128.webp"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.BS4jZavC.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/en/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/en/#top" data-nav="home">HOME</a><a href="/en/#profile" data-nav="profile">PROFILE</a><a href="/en/#projects" data-nav="projects">PROJECTS</a><a href="/en/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/projects/terra-128/" data-lang-switch="ko" hreflang="ko" aria-label="한국어로 보기">KO</a> <a class="btn" href="/en/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/en/#projects">← All projects</a> <div id="project-detail" class="pd" data-slug="terra-128" data-category="Circuits"> <h2 class="pd-title">Terra-128 - Soil and Terrain Survey Rover</h2> <div class="pd-hero"><img src="/images/thumb-terra-128.webp" alt=""></div> <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2026</b></div><div><small>ROLE</small><b>Custom PCB design · Low-level firmware</b></div><div><small>TEAM</small><b>Team of 2</b></div><div><small>CATEGORY</small><b>Circuits</b></div> </div>  <p class="pd-ov">An exploration rover that fuses an RGB-D camera, IMU, ultrasonic, pressure and soil-moisture sensors to analyze terrain risk and measure soil. I designed and built the ATmega128 custom control PCB in Altium, and wrote the low-level firmware and sensor filters.</p> <div class="doc prose prose-invert max-w-none"><!-- TODO(author): date is a temporary value taken from the v2 date printed on the PCB silkscreen (2026-06-05). Tell me the actual final presentation date. -->
+<h2 id="1-overview">1. Overview</h2>
+<p><strong>Terra-128</strong> is a soil and terrain survey rover built as a two-person team project for “AI Robotics Experiment 3” in the first semester of 2026.
+In farms, disaster sites and outdoor exploration, it is hard for people to check the flatness of the ground, obstacles and soil condition directly. On terrain mixed with soil, stones and roots, distance sensors alone are not enough to judge driving, so we aimed for a robot that fuses several sensors to judge terrain and soil condition together.</p>
+<p><img src="/images/terra-robot.webp" alt="The Terra-128 robot, front (left) and side (right)"></p>
+<ul>
+<li><strong>Course:</strong> AI Robotics Experiment 3 (first semester 2026)</li>
+<li><strong>Team:</strong> Team of 2, with roles split into circuits, PCB and low-level firmware / mechanical design, vision and the Python high-level software</li>
+<li><strong>My role:</strong> designing and building the Altium-based custom control PCB, the ATmega128 low-level firmware, and the sensor filter pipelines</li>
+<li><strong>How it works:</strong> it is not fully autonomous. The user drives with a joystick and follows the direction and distance guidance on a laptop UI, so it is a <strong>manual-drive measurement assistant</strong>.</li>
+</ul>
+<h2 id="2-system-overview">2. System Overview</h2>
+<p>A <strong>Python high-level processor</strong> on a laptop and an <strong>ATmega128 low-level controller</strong> are connected over UART, each with its own role.</p>
+<p><img src="/images/terra-architecture.webp" alt="Terra-128 system architecture"></p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controller</td>
+<td>ATmega128</td>
+<td>Sensor reading, PWM control, UART communication</td>
+</tr>
+<tr>
+<td>High-level processor</td>
+<td>Laptop (Python, OpenCV)</td>
+<td>RealSense processing, PointCloud, Costmap, A* path check, UI</td>
+</tr>
+<tr>
+<td>Vision sensor</td>
+<td>Intel RealSense D457</td>
+<td>RGB image and Depth-based 3D terrain data</td>
+</tr>
+<tr>
+<td>Attitude sensor</td>
+<td>MPU6050 (I2C)</td>
+<td>Roll/Pitch measurement, PointCloud tilt correction</td>
+</tr>
+<tr>
+<td>Distance sensor</td>
+<td>HC-SR04 + SG90 servo</td>
+<td>Close-range distance measurement and height scan</td>
+</tr>
+<tr>
+<td>Drive feedback</td>
+<td>4 motor encoders</td>
+<td>Wheel rotation and travel distance estimate</td>
+</tr>
+<tr>
+<td>Soil sensors</td>
+<td>FSR pressure sensor, soil-moisture sensor</td>
+<td>Ground firmness and moisture</td>
+</tr>
+<tr>
+<td>Actuators</td>
+<td>DC motors, MG996R servo, buzzer</td>
+<td>Driving, stamp module, completion alert</td>
+</tr>
+</tbody>
+</table>
+<p>Data flows <code>sensors → ATmega128 → UART → laptop (Python) → UI</code>. The laptop sends <code>SERVO</code>, <code>TURN</code>, <code>STRIKE</code> and <code>BUZZER</code> commands, and the ATmega128 returns <code>IMU</code>, <code>ENC</code>, <code>ULTRA</code>, <code>FORCE</code>, <code>WATER</code> and <code>RESULT</code> values.</p>
+<h2 id="3-what-i-did">3. What I Did</h2>
+<h3 id="custom-control-pcb-design-and-build">Custom control PCB: design and build</h3>
+<p>Breadboards and thin jumper wires cannot cope with the current peaks of four motors and servos, or with motor noise corrupting encoder and analog sensor signals, so I <strong>designed and built a dedicated control PCB in Altium Designer.</strong></p>
+<p><img src="/images/terra-pcb.webp" alt="The Terra-128 control PCB that I designed, built and debugged"></p>
+<ul>
+<li><strong>MCU:</strong> an ATmega128A with a 16 MHz crystal. Two hardware UARTs and plenty of timers handle four-axis encoder counting and several PWM outputs.</li>
+<li><strong>Power:</strong> the battery (11.1–12.6 V) is stepped down to 5 V by an LM2596XS switching regulator for the sensors and servos.</li>
+<li><strong>USB-UART:</strong> an FT231XS connects to the laptop. Considering the surge noise from the motors, I lowered the baud rate to <strong>9600 bps</strong> to favor stability.</li>
+<li><strong>VBUS power isolation:</strong> the laptop’s USB-C 5 V and the board’s main 5 V rail are physically separated. This prevents the two supplies from fighting and damaging the laptop port or back-feeding current; plugging in USB-C wakes only the serial chip, and the MCU runs only when main power is applied.</li>
+<li><strong>AVCC filter:</strong> a resistor and a 0.1 µF capacitor next to the ADC supply pin form an LC low-pass filter so digital switching noise does not leak into the analog inputs of the soil-moisture and pressure sensors.</li>
+<li><strong>RESET protection:</strong> a fast switching diode (1N4148W) between RESET and VCC keeps the residual charge of the reset capacitor from flowing back into the MCU when power is cut.</li>
+</ul>
+<p><img src="/images/terra-schematic.png" alt="Altium schematic: ATmega128, motor drivers, sensor connectors and power">
+<img src="/images/terra-pcb-3d.webp" alt="3D render of the PCB (v2)"></p>
+<h3 id="fabrication-and-hardware-debugging">Fabrication and hardware debugging</h3>
+<ul>
+<li>I ordered the PCB from the Gerber files and <strong>hand-soldered</strong> the small SMD parts with tweezers and a rework station.</li>
+<li><strong>Two-stage power bring-up:</strong> before applying power, I checked every VCC-GND pair for shorts with a multimeter. I then set the bench supply to 12 V with a 0.1 A current limit and powered the board for the first time; once nothing was wrong and I released the limit, the no-load standby current settled at about 30 mA.</li>
+<li><strong>From v1 to v2:</strong> the v1 board was ordered with a GND-VCC short. Tracing it, I found the <strong>route width on the motor-driver side was too thick</strong>. I re-routed it more cleanly and fixed the vias, and the second order (v2) worked normally.</li>
+<li><strong>Hardware loopback test:</strong> before bringing up the MCU, I shorted the MCU_TXD and MCU_RXD pads with tweezers and sent text from Tera Term (9600 bps); getting the data echoed back confirmed the FT231XS communication path.</li>
+</ul>
+<h3 id="atmega128-low-level-firmware">ATmega128 low-level firmware</h3>
+<p>A timer-based structure with tasks at different rates.</p>
+<ul>
+<li><strong>10 ms task:</strong> IMU, ADC sensors (pressure, soil moisture), encoder speed calculation and filter updates</li>
+<li><strong>60 ms task:</strong> ultrasonic measurement, run as an independent sequence to avoid interference between sensors</li>
+<li><strong>200 ms task:</strong> sends the filtered values to the laptop as UART packets such as <code>IMU,roll,pitch</code></li>
+<li><strong>Encoders:</strong> a 0.1 ms timer interrupt XORs pin state changes to count rising-edge ticks for four wheels</li>
+<li><strong>Ultrasonic:</strong> measures the echo pulse width with a timer and has a timeout guard; takes three samples 20 ms apart, averages them, then applies a median filter</li>
+<li><strong>UART protocol:</strong> text packets such as <code>ENC,lf,lb,rf,rb</code>, <code>ULTRA,distance</code>, <code>FORCE,value</code> and <code>WATER,value</code></li>
+</ul>
+<h3 id="per-sensor-filter-pipelines">Per-sensor filter pipelines</h3>
+<p>Each sensor has different noise, so I chose a different filter for each.</p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Problem</th>
+<th>Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MPU6050 IMU</td>
+<td>Accelerometer is vibration-sensitive and gyro drift accumulates</td>
+<td>Kalman filter (Roll/Pitch) fusion</td>
+</tr>
+<tr>
+<td>Wheel encoder</td>
+<td>Quantization error and motor ripple when differentiated into speed</td>
+<td>8-sample moving average</td>
+</tr>
+<tr>
+<td>HC-SR04 ultrasonic</td>
+<td>Spikes and dropouts depending on the reflecting surface</td>
+<td>3-sample average, then 3-sample median</td>
+</tr>
+<tr>
+<td>FSR pressure sensor</td>
+<td>Residual offset at no load, impulses at contact</td>
+<td>Initial zero calibration + 8-sample moving average</td>
+</tr>
+<tr>
+<td>Soil-moisture sensor</td>
+<td>Impedance swing at contact, motor ground ripple</td>
+<td>8-sample moving average + bit-shift low-pass filter</td>
+</tr>
+</tbody>
+</table>
+<p>The soil-moisture low-pass filter uses a <strong>3-bit right shift (÷8)</strong> instead of floating-point math to avoid division cost on an 8-bit AVR.</p>
+<p><img src="/images/terra-filter-imu.webp" alt="IMU Roll/Pitch before and after the Kalman filter">
+<img src="/images/terra-filter-encoder.webp" alt="Wheel encoder speed before and after the moving average">
+<img src="/images/terra-filter-ultrasonic.webp" alt="Ultrasonic sensor before and after the median filter"></p>
+<!-- TODO(author): Tell me whether the before/after graphs above are measured data or simulations made (for example in MATLAB) to show the filter effect. If they are simulations, I will say so in the captions. Please also confirm whether numbers such as the Kalman gain (0.17) are measured. -->
+<h2 id="4-teammates-part-high-level-software-and-mechanics">4. Teammate’s Part (High-level Software and Mechanics)</h2>
+<ul>
+<li><strong>Mechanics:</strong> designed the upper and lower plates, sensor brackets, servo mounts and the ultrasonic sensor mount in Inventor. The <strong>stamp module</strong> (MG996R, compression springs) turns servo rotation into vertical linear motion through a linkage so the FSR pressure sensor and soil-moisture sensor touch the ground only when needed.</li>
+<li><strong>Terrain analysis:</strong> converts RealSense Depth into a PointCloud, corrects its tilt with the IMU Roll/Pitch, builds a BEV Height Map and Costmap, and previews an A* path.</li>
+<li><strong>Target tracking and UI:</strong> when the user clicks a target on screen, a Vision Tracker follows it and gives <code>LEFT</code>, <code>RIGHT</code> and <code>FORWARD</code> guidance. An OpenCV UI shows the camera, terrain maps and measurement results.</li>
+</ul>
+<p><img src="/images/terra-ui-costmap.webp" alt="Laptop UI: camera view, BEV Height Map and Costmap"></p>
+<h2 id="5-demo-flow">5. Demo Flow</h2>
+<p><code>Select target → Drive by joystick → Height Scan → TURN → STRIKE → Result</code></p>
+<ol>
+<li>Clicking a target in the UI starts tracking; beyond 50 cm the distance is updated from the RealSense and the encoders.</li>
+<li>From 40–50 cm, the ultrasonic sensor and servo align to the target direction, covering the close range the depth camera cannot see.</li>
+<li>After arriving, a <strong>Height Scan</strong> moves the SG90 servo to change the ultrasonic sensor’s angle and measure height.</li>
+<li><code>TURN</code> rotates the stamp module into the measuring position, and <code>STRIKE</code> lowers it to read pressure and moisture.</li>
+<li>When both values arrive normally, the UI shows <code>END</code> and the buzzer signals completion.</li>
+</ol>
+<h2 id="6-schedule">6. Schedule</h2>
+<p>From April 27 until the presentation day. Laptop software, ATmega128 and hardware work ran in parallel.</p>
+<table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Laptop software</th>
+<th>ATmega128</th>
+<th>Hardware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.27 – 5.8</td>
+<td>Camera calibration, basic OpenCV setup</td>
+<td>Motor PWM control</td>
+<td>Mechanical design and printing</td>
+</tr>
+<tr>
+<td>5.9 – 5.16</td>
+<td>-</td>
+<td>ADC filtering, sensor signal transfer</td>
+<td>Controller design</td>
+</tr>
+<tr>
+<td>5.17 – 5.24</td>
+<td>Sensing data parsing (UART)</td>
+<td>-</td>
+<td>Power circuit design</td>
+</tr>
+<tr>
+<td>5.25 – 6.1</td>
+<td>UI</td>
+<td>Servo control</td>
+<td>Stamp module assembly</td>
+</tr>
+<tr>
+<td>Until the presentation</td>
+<td>Debug</td>
+<td>Debug</td>
+<td>Debug</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-limits-and-next-steps">7. Limits and Next Steps</h2>
+<ul>
+<li><strong>Ultrasonic sensor:</strong> values jumped or did not arrive depending on the surface material, angle and distance. We compensated with timeout handling, raw-value decisions and change-based edge detection; sometimes using the raw value was better than filtering it blindly.</li>
+<li><strong>Measurement variance:</strong> the pressure sensor depends on contact position and force, and the soil-moisture sensor on soil density and insertion depth. Per-sensor calibration and repeated-measurement averaging are needed. The stamp module also varies with linkage play and spring stiffness, so contact-force calibration, a linear guide and limit switches could be added.</li>
+<li><strong>Manual driving:</strong> we chose manual driving for implementation stability and demo reliability. Using the current Costmap and Vision Tracker results for automatic speed control, alignment and stopping could extend it into a semi-autonomous rover.</li>
+</ul>
+<p>On a real sensor-based robot, noise, spikes, delays and unstable communication show up unlike the theoretical values, and we confirmed how important exception handling and state management are.</p>
+<h2 id="8-reflection">8. Reflection</h2>
+<p>When I ordered the PCB, v1 had a GND-VCC short, and the cause was a route width that was too thick on the motor-driver side. I re-routed it more cleanly and fixed the vias, and the second order worked normally. We had a hard deadline to finish ordering the board, the firmware and the features, so with shipping time included it was nerve-racking.</p>
+<hr>
+<h2 id="9-demo-video">9. Demo Video</h2>
+<!-- TODO: Send me the YouTube link and I will add it in this form.
+<div class="aspect-video w-full mt-4">
+  <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/VIDEO_ID" title="Terra-128 Demo" frameborder="0" allowfullscreen></iframe>
+</div>
+--></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>Altium </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>PCB Design </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg> </span>ATmega128 </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg> </span>UART </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18M3 16h18"/><circle cx="8" cy="8" r="1.5"/><circle cx="16" cy="16" r="1.5"/><path d="M8 8v4M16 16v-4"/></svg> </span>I2C </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5 6.5-5s6.5 1.5 6.5 5M16 5a3.5 3.5 0 0 1 0 7M18 15c2.5.5 4 2 4 5"/></svg> </span>Team Project </span></div></div>  </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>
