@@ -15,6 +15,7 @@
 | GitHub / LinkedIn / 이메일 / 이력서 PDF / 프로필 사진 / 위치 / Open to work / 대표 기술 칩 | `src/data/profile.ts` |
 | 프로젝트 내용 | `src/content/projects/ko/*.md`, `src/content/projects/en/*.md` |
 | 저널(블로그) 글 | `src/content/journal/ko/*.md`, `src/content/journal/en/*.md` |
+| ACTIVITY 섹션(수상, 타임라인, 기록 통계) | 데이터 `src/data/activity.ts`, 문구 `src/i18n/ko.ts`·`en.ts` 의 `activity` |
 
 - `src/i18n/*.ts` 안의 `{n}`, `{a}`, `{b}` 는 숫자가 들어가는 자리이니 그대로 두세요.
 - 소개 문장(`profile.lead`)에는 `<b>굵게</b>` 를 쓸 수 있습니다.
@@ -85,6 +86,7 @@ draft: false     # true 이면 사이트에 나타나지 않음 (임시 저장�
 ## 4-1. 이미지 넣기와 용량 줄이기
 
 - 이미지는 `public/images/` 에 넣고 글에서는 `/images/파일이름.webp` 로 가리킵니다.
+- 영상은 `public/videos/` 에 넣고(용량은 한 파일 10MB 이하로 줄이세요), 글에서는 `<video controls muted playsinline preload="metadata" src="/videos/파일.mp4"></video>` 로 넣습니다.
 - 새 이미지를 넣은 뒤 `npm run optimize-images` 를 실행하면 크기를 줄이고 압축합니다.
   (썸네일 `thumb-*` 는 가로 960px, 나머지는 1600px 이하. 이미 작은 파일은 건드리지 않습니다.)
 - 링크 미리보기(카톡·슬랙·SNS)용 이미지는 `public/og.png` 입니다. 바꾸려면 `scripts/make-og.mjs` 의 `PHOTO` 경로를 고치고 `npm run make-og` 를 실행하세요.
@@ -129,13 +131,14 @@ Actions 가 다시 정상이 되면 Source 를 **GitHub Actions** 로 되돌리�
 src/
   i18n/ko.ts, en.ts        화면 문구 (한국어/영어)
   data/profile.ts          링크·사진·이력서·기술 칩 등 프로필 정보
+  data/activity.ts         ACTIVITY 섹션(수상, 타임라인, 기록 통계) 데이터
   content/projects/{ko,en} 프로젝트 마크다운
   content/journal/{ko,en}  저널 마크다운
   components/, layouts/    화면 구성 (Astro)
   scripts/home.ts          홈 인터랙션 (bento, 전체 보기, 상세 패널)
   styles/global.css        디자인(색상·레이아웃)
   pages/                   주소 구조 (/, /en/, /projects/…, /journal/…)
-public/                    이미지, favicon, CNAME
+public/                    이미지, 영상(videos/), favicon, CNAME
 ```
 
 색상은 `src/styles/global.css` 맨 위의 `:root` 변수(`--r` 이 포인트 레드)에서 바꿀 수 있습니다.
