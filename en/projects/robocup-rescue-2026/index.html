@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RoboCup Rescue 2026 - Wiring and Circuit Design and the Audio Package | Kinesis</title><meta name="description" content="On the ROBIT team that entered the RoboCup 2026 Rescue Robot League, I owned the robot's wiring and circuits, designing and ordering boards and DC-DC converters, and built the audio package between the operator and the robot. The team reached the semifinals, finished 9th, and won the Best TDP award."><link rel="canonical" href="https://portfolio.kashic.dev/en/projects/robocup-rescue-2026/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/robocup-rescue-2026/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/robocup-rescue-2026/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/robocup-rescue-2026/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="RoboCup Rescue 2026 - Wiring and Circuit Design and the Audio Package | Kinesis"><meta property="og:description" content="On the ROBIT team that entered the RoboCup 2026 Rescue Robot League, I owned the robot's wiring and circuits, designing and ordering boards and DC-DC converters, and built the audio package between the operator and the robot. The team reached the semifinals, finished 9th, and won the Best TDP award."><meta property="og:url" content="https://portfolio.kashic.dev/en/projects/robocup-rescue-2026/"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/images/thumb-rescue-2026.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="RoboCup Rescue 2026 - Wiring and Circuit Design and the Audio Package | Kinesis"><meta name="twitter:description" content="On the ROBIT team that entered the RoboCup 2026 Rescue Robot League, I owned the robot's wiring and circuits, designing and ordering boards and DC-DC converters, and built the audio package between the operator and the robot. The team reached the semifinals, finished 9th, and won the Best TDP award."><meta name="twitter:image" content="https://portfolio.kashic.dev/images/thumb-rescue-2026.webp"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.bvw0IX5x.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/en/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/en/#top" data-nav="home">HOME</a><a href="/en/#profile" data-nav="profile">PROFILE</a><a href="/en/#projects" data-nav="projects">PROJECTS</a><a href="/en/#experience" data-nav="experience">EXPERIENCE</a><a href="/en/#activity" data-nav="activity">ACTIVITY</a><a href="/en/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/projects/robocup-rescue-2026/" data-lang-switch="ko" hreflang="ko" aria-label="한국어로 보기">KO</a> <a class="btn" href="/en/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/en/#projects">← All projects</a> <div id="project-detail" class="pd" data-slug="robocup-rescue-2026" data-category="Circuits"> <h2 class="pd-title">RoboCup Rescue 2026 - Wiring and Circuit Design and the Audio Package</h2> <div class="pd-hero"><img src="/images/thumb-rescue-2026.webp" alt=""></div> <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2026</b></div><div><small>ROLE</small><b>Wiring · Circuits (board/converter design and ordering) · Audio package</b></div><div><small>TEAM</small><b>ROBIT team</b></div><div><small>CATEGORY</small><b>Circuits</b></div> </div>  <p class="pd-ov">On the ROBIT team that entered the RoboCup 2026 Rescue Robot League, I owned the robot&#39;s wiring and circuits, designing and ordering boards and DC-DC converters, and built the audio package between the operator and the robot. The team reached the semifinals, finished 9th, and won the Best TDP award.</p> <div class="doc prose prose-invert max-w-none">
+<h2 id="1-overview">1. Overview</h2>
+<p>I took on <strong>the wiring and circuits</strong> of the robot, and <strong>the audio package</strong>, on the ROBIT team that entered the Rescue Robot League at <strong>RoboCup 2026 Incheon</strong> (June 30 – July 6, 2026, Songdo ConvensiA).</p>
+<ul>
+<li><strong>Result (team):</strong> Advanced to the semifinals and finished <strong>9th</strong>, and won the <strong>Best TDP</strong> award</li>
+<li><strong>My role:</strong> Designing the power distribution and wiring, designing, building, and ordering the boards and DC-DC converters we needed, and developing the audio package</li>
+<li>Best TDP is separate from the placement awards: it goes to a team that wrote its team description paper (TDP) well.</li>
+</ul>
+<blockquote>
+<p>This is a system that the junior members continue to use and improve, so <strong>I do not disclose configuration values or detailed design</strong>, and I describe design decisions and results. The detailed stories by topic are split into the articles below.</p>
+</blockquote>
+<h2 id="2-rules-analysis-and-requirements">2. Rules Analysis and Requirements</h2>
+<p>As a first step I read the rules closely, organized the scoring items, and made a translation that I shared so the team could use it right away. (The rulebook text itself is not reproduced here.)</p>
+<p>While deciding the hardware specs for the TDP, I summarized why the operator box needed its own circuit:</p>
+<ul>
+<li>Go beyond simple motor control: <strong>faster data reception</strong> and <strong>room to add sensors</strong>.</li>
+<li>Add <strong>voltage monitoring</strong> so the battery state can be seen on the operator screen.</li>
+<li>Make <strong>maintenance easy</strong> so a failed part can be unplugged and replaced right away.</li>
+</ul>
+<h2 id="3-what-i-took-on-by-topic">3. What I Took On, by Topic</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Article</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Power distribution, wiring, and boards</td>
+<td><a href="/en/projects/robot-electrical-architecture/">Robot Electrical System Design</a></td>
+</tr>
+<tr>
+<td>DC-DC conversion board</td>
+<td><a href="/en/projects/mphb-dc-dc-converter/">MPHB</a></td>
+</tr>
+<tr>
+<td>Two-way audio</td>
+<td><a href="/en/projects/two-way-audio/">2-Way Audio</a></td>
+</tr>
+</tbody>
+</table>
+<p>I later applied the same electrical design to the <a href="/en/projects/defense-robot-2026-electrical-comm/">Defense Robot Competition 2026</a>, where the team won the grand prize.</p>
+<p><video controls muted playsinline preload="metadata" src="/videos/operator-station-demo.mp4"></video></p>
+<p>A demonstration of the operator station.</p>
+<h2 id="4-participation-certificate">4. Participation Certificate</h2>
+<p><img src="/images/robocup-2026-participation-certificate.webp" alt="RoboCup 2026 Incheon certificate of participation (Rescue Robot League)"></p>
+<h2 id="5-limits-and-what-i-learned">5. Limits and What I Learned</h2>
+<ul>
+<li>Splitting the electrical system into boards means a failed part can be replaced on its own, but <strong>more boards meant more connector and wiring checks.</strong></li>
+<li>If a part’s real size is not reflected correctly in the PCB, the problem only shows up at soldering. A step to check part height and mountability before ordering is needed.</li>
+</ul></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>Altium </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>PCB Design </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>DC-DC Converter </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.807 0C1.353 0 .173 1.22.173 2.722c0 1.504 1.18 2.723 2.634 2.723 1.455 0 2.635-1.22 2.635-2.723S4.262 0 2.807 0zM12 0c-1.455 0-2.634 1.22-2.634 2.722 0 1.504 1.18 2.723 2.634 2.723 1.455 0 2.634-1.22 2.634-2.723S13.454 0 12 0zm9.193 0c-1.455 0-2.635 1.22-2.635 2.722 0 1.504 1.18 2.723 2.635 2.723 1.455 0 2.634-1.22 2.634-2.723S22.647 0 21.193 0zM2.807 9.277C1.353 9.277.173 10.497.173 12s1.18 2.722 2.634 2.722c1.455 0 2.635-1.219 2.635-2.722 0-1.504-1.18-2.723-2.635-2.723zm9.193 0c-1.455 0-2.634 1.22-2.634 2.723s1.18 2.722 2.634 2.722c1.455 0 2.634-1.219 2.634-2.722 0-1.504-1.18-2.723-2.634-2.723zm9.193 0c-1.455 0-2.635 1.22-2.635 2.723s1.18 2.722 2.635 2.722c1.455 0 2.634-1.219 2.634-2.722 0-1.504-1.18-2.723-2.634-2.723zM2.807 18.555c-1.454 0-2.634 1.22-2.634 2.722C.173 22.781 1.353 24 2.807 24c1.455 0 2.635-1.22 2.635-2.723s-1.18-2.722-2.635-2.722zm9.193 0c-1.455 0-2.634 1.22-2.634 2.722C9.366 22.781 10.546 24 12 24c1.455 0 2.634-1.22 2.634-2.723s-1.18-2.722-2.634-2.722zm9.193 0c-1.455 0-2.635 1.22-2.635 2.722 0 1.504 1.18 2.723 2.635 2.723 1.455 0 2.634-1.22 2.634-2.723s-1.18-2.722-2.634-2.722z"></path></svg> </span>ROS 2 </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>TDP </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5 6.5-5s6.5 1.5 6.5 5M16 5a3.5 3.5 0 0 1 0 7M18 15c2.5.5 4 2 4 5"/></svg> </span>Team Project </span></div></div>  </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>

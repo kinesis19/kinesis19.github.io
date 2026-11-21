@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>전원 안정성 - BMS 문제 분석과 브레이크 초퍼 설계 | Kinesis</title><meta name="description" content="배터리 보호 회로(BMS)를 붙인 뒤 모터 토크가 순간적으로 끊기는 문제를 측정으로 분석하고, 회생 전류를 저항에서 소비하는 브레이크 초퍼 회로를 설계·제작했습니다. 벤치 시험은 했지만, 실제 로봇에서 토크를 줬을 때 열로 해소되는지는 아직 검증하지 못했습니다."><link rel="canonical" href="https://portfolio.kashic.dev/projects/brake-chopper-bms/"><link rel="alternate" hreflang="ko" href="https://portfolio.kashic.dev/projects/brake-chopper-bms/"><link rel="alternate" hreflang="en" href="https://portfolio.kashic.dev/en/projects/brake-chopper-bms/"><link rel="alternate" hreflang="x-default" href="https://portfolio.kashic.dev/projects/brake-chopper-bms/"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="website"><meta property="og:title" content="전원 안정성 - BMS 문제 분석과 브레이크 초퍼 설계 | Kinesis"><meta property="og:description" content="배터리 보호 회로(BMS)를 붙인 뒤 모터 토크가 순간적으로 끊기는 문제를 측정으로 분석하고, 회생 전류를 저항에서 소비하는 브레이크 초퍼 회로를 설계·제작했습니다. 벤치 시험은 했지만, 실제 로봇에서 토크를 줬을 때 열로 해소되는지는 아직 검증하지 못했습니다."><meta property="og:url" content="https://portfolio.kashic.dev/projects/brake-chopper-bms/"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Kinesis"><meta property="og:image" content="https://portfolio.kashic.dev/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="전원 안정성 - BMS 문제 분석과 브레이크 초퍼 설계 | Kinesis"><meta name="twitter:description" content="배터리 보호 회로(BMS)를 붙인 뒤 모터 토크가 순간적으로 끊기는 문제를 측정으로 분석하고, 회생 전류를 저항에서 소비하는 브레이크 초퍼 회로를 설계·제작했습니다. 벤치 시험은 했지만, 실제 로봇에서 토크를 줬을 때 열로 해소되는지는 아직 검증하지 못했습니다."><meta name="twitter:image" content="https://portfolio.kashic.dev/og.png"><meta name="theme-color" content="#0a0a0b"><script>document.documentElement.classList.add('js');</script><link rel="stylesheet" href="/_astro/index.bvw0IX5x.css"></head> <body data-home="0"> <nav class="site-nav"> <div class="wrap"> <a class="logo" href="/#top" aria-label="Kinesis">KINES<i>I</i>S</a> <div class="l"> <a href="/#top" data-nav="home">HOME</a><a href="/#profile" data-nav="profile">PROFILE</a><a href="/#projects" data-nav="projects">PROJECTS</a><a href="/#experience" data-nav="experience">EXPERIENCE</a><a href="/#activity" data-nav="activity">ACTIVITY</a><a href="/#journal" data-nav="journal">JOURNAL</a> </div> <a class="lang-switch" href="/en/projects/brake-chopper-bms/" data-lang-switch="en" hreflang="en" aria-label="Switch to English">EN</a> <a class="btn" href="/#contact">CONTACT</a> </div> </nav>  <main class="page-detail"> <div class="wrap narrow"> <a class="back-link" href="/#projects">← 프로젝트 목록</a> <div id="project-detail" class="pd" data-slug="brake-chopper-bms" data-category="Circuits"> <h2 class="pd-title">전원 안정성 - BMS 문제 분석과 브레이크 초퍼 설계</h2>  <div class="pd-meta" style="grid-template-columns:repeat(4,1fr)"> <div><small>YEAR</small><b>2026</b></div><div><small>ROLE</small><b>문제 분석 · 회로 재설계</b></div><div><small>TEAM</small><b>ROBIT 팀</b></div><div><small>CATEGORY</small><b>회로 설계</b></div> </div>  <p class="pd-ov">배터리 보호 회로(BMS)를 붙인 뒤 모터 토크가 순간적으로 끊기는 문제를 측정으로 분석하고, 회생 전류를 저항에서 소비하는 브레이크 초퍼 회로를 설계·제작했습니다. 벤치 시험은 했지만, 실제 로봇에서 토크를 줬을 때 열로 해소되는지는 아직 검증하지 못했습니다.</p> <div class="doc prose prose-invert max-w-none">
+<h2 id="1-문제-bms를-붙였더니-토크가-끊긴다">1. 문제: BMS를 붙였더니 토크가 끊긴다</h2>
+<p>2026년 8월, 로봇에 배터리 보호 회로(BMS)와 전원 릴레이를 넣은 뒤로 <strong>주행 중이나 특정 동작에서 모터 토크가 순간적으로 꺼지는</strong> 현상이 나타났습니다.</p>
+<ul>
+<li>전원 경로: 배터리 → BMS → 릴레이 → 전원 분배 → 모터 드라이버</li>
+<li>모터 제어기로 명령을 다시 보내면 즉시 복구됩니다.</li>
+<li>BMS와 릴레이를 넣기 전에는 같은 환경에서 문제가 없었습니다.</li>
+<li>다리를 접은 자세에서 지면으로 천천히 복귀하는 동작에서 토크가 꺼지면, 기체가 바로 지면으로 떨어졌습니다.</li>
+</ul>
+<blockquote>
+<p>이 글은 후배들이 이어서 쓰는 전원 구성이어서, <strong>회로도, 부품 선정, 설정 값은 공개하지 않고</strong> 분석 과정과 판단만 적습니다.</p>
+</blockquote>
+<h2 id="2-측정">2. 측정</h2>
+<p>토크가 끊길 때의 BMS 상태를 앱으로 기록했습니다.</p>
+<ul>
+<li>방전 쪽 스위치는 계속 켜져 있었습니다. 즉 BMS가 전원을 완전히 끊은 것이 <strong>아니었습니다.</strong></li>
+<li>충전 쪽 스위치는 수동으로 꺼 두어도 구동 중에 자동으로 켜졌습니다.</li>
+<li>셀 전압, 온도, 전압 차이는 모두 정상 범위였습니다.</li>
+</ul>
+<p>초기 설정에서 잘못된 값도 찾아 고쳤습니다. <strong>하지만 증상은 계속되었습니다.</strong></p>
+<h2 id="3-원인-추정">3. 원인 추정</h2>
+<p>측정값을 근거로 다음 흐름을 추정했습니다.</p>
+<p><code>특정 동작 → 모터가 급감속하며 회생(역방향) 전류 발생 → BMS가 충전 전류로 인식 → 충전 스위칭 → 전원 버스 전압이 순간적으로 튐 → 모터 드라이버 내부 보호 동작 → 명령 재전송 시 복구</code></p>
+<p>근거는 방전 스위치가 계속 켜져 있다는 점, 충전 스위치를 수동으로 꺼도 구동하면 자동으로 켜진다는 점, BMS를 넣기 전에는 문제가 없었다는 점입니다. <strong>직접 확인한 것이 아니라 추정</strong>입니다.</p>
+<p>검토한 해결 방안은 이렇습니다.</p>
+<ul>
+<li>커패시터 추가: 상용 모터 제어기에 이미 충분히 들어 있어서 추가하지 않았습니다.</li>
+<li>충전 스위치 수동 OFF: BMS가 구동 중에 다시 켜서 의미가 없었습니다.</li>
+<li>감속도 제한: 대회에서 일정 속도를 유지해야 해서 적용하지 않았습니다.</li>
+<li>역방향 전류를 막는 소자: 방향을 막는 방법을 검토해 부품을 준비했습니다.</li>
+</ul>
+<p>당장은 대회를 앞두고 <strong>BMS를 빼서</strong> 문제를 피했습니다.</p>
+<h2 id="4-방향-전환-브레이크-초퍼">4. 방향 전환: 브레이크 초퍼</h2>
+<p>역방향 전류를 막는 소자는 회생 전류의 <strong>방향만</strong> 정할 뿐 에너지를 소비하지 않습니다. 에너지가 결국 배터리와 BMS로 돌아가서 BMS의 과충전 보호가 동작하면 보호 수단이 사라집니다. 그래서 전원 버스 전압을 감지해 <strong>저항에서 에너지를 소비시키는 브레이크 초퍼</strong>로 방향을 잡았습니다. ROBIT 안의 다른 팀의 브레이크 초퍼 구조를 참고했고, 회로 전체를 다시 설계해 <strong>제작까지 했습니다.</strong> 다만 이것이 의도한 대로 동작하는지는 아직 실제 로봇에서 확인하지 못했습니다(6장).</p>
+<p>재설계에서 중점을 둔 것은 이렇습니다.</p>
+<ul>
+<li><strong>과전압 보호</strong>를 추가해 스위칭 소자를 보호합니다.</li>
+<li>회생 에너지는 순간적으로 크므로, <strong>한 부품에 열이 몰리지 않도록</strong> 소비 저항을 나눕니다.</li>
+<li>회로 자체의 전원이 버스 전압에 흔들리지 않도록 <strong>전원 방식을 바꿨습니다.</strong></li>
+<li>보호 동작이 시작되는 전압은 배터리 완충 전압과 과전압 보호 한계 사이에 <strong>여유가 생기도록</strong> 다시 계산했습니다.</li>
+</ul>
+<h2 id="5-벤치-시험">5. 벤치 시험</h2>
+<p>제작한 초퍼를 <strong>작업대에서</strong> 저항 종류를 바꿔 가며 시험했습니다. 열화상 카메라로 저항의 발열을 함께 관찰했습니다. 이 시험은 회로와 저항 자체의 동작을 보는 것이고, <strong>실제 로봇의 모터에 토크를 준 상태의 시험이 아닙니다.</strong></p>
+<p><video controls muted playsinline preload="metadata" src="/videos/brake-chopper-test-aluminum.mp4"></video></p>
+<p>알루미늄 저항으로 한 벤치 시험 영상입니다.</p>
+<p><video controls muted playsinline preload="metadata" src="/videos/brake-chopper-test-cement.mp4"></video></p>
+<p>시멘트 저항으로 한 벤치 시험 영상입니다.</p>
+<h2 id="6-한계와-배운-점">6. 한계와 배운 점</h2>
+<ul>
+<li><strong>아직 검증하지 못한 것:</strong> 실제 로봇에서 모터에 토크를 줬을 때, 회생 에너지가 저항에서 <strong>열로 해소되어 버스 전압이 튀지 않는지</strong>는 확인하지 못했습니다. BMS를 다시 넣은 상태에서 토크 끊김이 사라지는지도 마찬가지입니다. 이 글의 초퍼는 <strong>설계·제작과 벤치 시험까지</strong>입니다.</li>
+<li>위의 원인은 <strong>추정</strong>이고, 역방향 전류를 막는 방식은 부품만 준비한 상태에서 방향을 바꿨습니다. 두 방식의 효과를 같은 조건에서 비교한 결과는 이 글에 없습니다.</li>
+<li>BMS 설정 오류를 바로잡은 뒤에도 증상이 남았기 때문에, 설정이 아닌 구조적인 원인(회생 전류)을 의심하게 되었습니다. 원인을 가르려면 <strong>측정할 항목과 순서를 먼저 정해 두어야</strong> 합니다.</li>
+<li>회생 전류는 모터를 전원에 붙이는 순간부터 고려해야 하는 설계 요소입니다.</li>
+</ul></div> <div class="pd-sec"><h5>TECH &amp; KEYWORDS</h5><div class="tools"><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>Altium </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4l2 3h4M7 15h3"/></svg> </span>PCB Design </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>BMS </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>Brake Chopper </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>Power Electronics </span><span class="tool"> <span class="ico"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/></svg> </span>Debugging </span></div></div>  </div> </div> </main>  <footer class="site-footer">© 2026 Kinesis · portfolio.kashic.dev</footer> <script type="module">const t=Array.from(document.querySelectorAll(".rv"));t.forEach((e,r)=>e.style.animationDelay=`${r%4*80}ms`);if("IntersectionObserver"in window){const e=new IntersectionObserver(r=>{for(const s of r)s.isIntersecting&&(s.target.classList.add("in"),e.unobserve(s.target))},{threshold:.08});t.forEach(r=>e.observe(r))}else t.forEach(e=>e.classList.add("in"));</script> <script>
+      document.querySelectorAll('[data-lang-switch]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('lang', a.getAttribute('data-lang-switch')); } catch (e) {}
+        });
+      });
+    </script> </body> </html>
