@@ -7,6 +7,11 @@ tags: ["Altium", "PCB Design", "ATmega128", "UART", "I2C", "Team Project"]
 role: "Custom PCB design · Low-level firmware"
 team: "Team of 2"
 featured: true
+links:
+  - label: "GitHub - System Architecture (public)"
+    url: "https://github.com/TERRA128/system-architecture"
+  - label: "Electrical & communication system diagram"
+    url: "https://github.com/TERRA128/system-architecture/blob/main/architecture/Electronic_Communication_System_Diagram.drawio.png"
 image: "/images/thumb-terra-128.webp"
 ---
 <!-- TODO(author): date is a temporary value taken from the v2 date printed on the PCB silkscreen (2026-06-05). Tell me the actual final presentation date. -->

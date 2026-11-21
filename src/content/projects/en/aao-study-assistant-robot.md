@@ -6,7 +6,7 @@ category: Robotics
 tags: ["Hardware Design", "Python", "UART", "Computer Vision", "Firebase", "Team Project"]
 role: "Hardware design · Database system"
 team: "Team of 5"
-featured: true
+featured: false
 image: "/images/thumb-aao.webp"
 ---
 ## 1. Overview

@@ -6,7 +6,7 @@ category: Robotics
 tags: ["Hardware Design", "Python", "UART", "Computer Vision", "Firebase", "Team Project"]
 role: "하드웨어 설계 · 데이터베이스 시스템"
 team: "5인 팀"
-featured: true
+featured: false
 image: "/images/thumb-aao.webp"
 ---
 ## 1. 프로젝트 개요

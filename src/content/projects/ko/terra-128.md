@@ -7,6 +7,11 @@ tags: ["Altium", "PCB Design", "ATmega128", "UART", "I2C", "Team Project"]
 role: "커스텀 PCB 설계 · 저수준 펌웨어"
 team: "2인 팀"
 featured: true
+links:
+  - label: "GitHub - 시스템 아키텍처 (공개)"
+    url: "https://github.com/TERRA128/system-architecture"
+  - label: "전기·통신 시스템 다이어그램"
+    url: "https://github.com/TERRA128/system-architecture/blob/main/architecture/Electronic_Communication_System_Diagram.drawio.png"
 image: "/images/thumb-terra-128.webp"
 ---
 <!-- TODO(작성자 확인): date 는 PCB 실크에 적힌 v2 날짜(2026-06-05)로 임시 입력했습니다. 실제 최종 발표일을 알려 주세요. -->

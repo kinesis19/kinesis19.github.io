@@ -6,7 +6,7 @@ category: Robotics
 tags: ["Android", "Next.js", "Firebase", "ESP32", "Temi", "Team Project"]
 role: "App & web full-stack development · DB design"
 team: "Team of 3"
-featured: true
+featured: false
 links:
   - label: "GitHub - User app (Android)"
     url: "https://github.com/Team-BeLight/CareLight"
@@ -114,7 +114,7 @@ We implemented most of the features planned in the proposal and built several cl
 - **An integrated ecosystem:** not just an app or a robot, but a [user app] - [robot app] - [web dashboard] - [custom hardware] system that works together.
 - **Active care:** instead of waiting like a fixed sensor or CCTV, the robot goes to the user, talks to them, and performs physical tasks such as cleaning and delivering medicine.
 - **Limits:** it depends heavily on the Temi's built-in features, the manipulator lacks precision and stability, and it copes poorly with complex obstacles and dynamic environments. Heart rate and medication patterns alone are also not enough to judge a person's health accurately.
-- **Future directions:** intelligent fall and emergency detection, AI-based life pattern analysis, emotional conversation AI, family albums and news sharing, a more precise manipulator, more IoT healthcare devices, and B2B expansion to hospitals and care facilities.
+- **Future directions:** intelligent fall and emergency detection, AI-based life pattern analysis, emotional conversation AI, family albums and news sharing, a more precise manipulator, more IoT healthcare devices, and B2B expansion to medical and care facilities.
 
 ## 11. Reflection
 I felt how hard it is for three people to build everything, and being able to trust my teammates with the low-level control let us finish the manipulator and sensor control on time. This time I was not afraid of failing and freely tried what I wanted to try. I was also reminded that the best team is the one that steps back from disagreements and moves toward a shared goal.

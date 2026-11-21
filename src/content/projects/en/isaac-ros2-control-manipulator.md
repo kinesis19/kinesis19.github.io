@@ -6,7 +6,7 @@ category: Robotics
 tags: ["ROS 2", "Isaac Sim", "RViz", "URDF", "Ubuntu"]
 role: "Package development"
 team: "Team of 3"
-featured: true
+featured: false
 image: "/images/thumb-isaac-manipulator.webp"
 links:
   - label: "GitHub Repository"
