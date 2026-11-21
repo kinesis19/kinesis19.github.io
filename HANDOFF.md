@@ -8,7 +8,7 @@
 - **스택:** Astro 5, Tailwind CSS v4, Pretendard, 한/영 이중 언어
 - **디자인:** "v16" (어두운 바탕, 빨강 포인트, 슬래시 호버, 벤토 프로젝트 브라우저, 페이지 이동 없는 상세 패널)
 - **현재 단계:** 틀과 8개 기존 프로젝트 이전을 마쳤고, 2024~2026년 프로젝트 4개(AAO, Care Light, Isaac Sim, Terra-128)의 내용을 채웠습니다. 그 위에 **업무 기록을 반영한 프로젝트 13개와 EXPERIENCE·ACTIVITY 섹션(경력, 수상, 타임라인, 통계)** 을 추가해 `main`에 병합했습니다(11장). **남은 것은 7장의 TODO(영상, 캡처, 날짜 확인)** 입니다.
-- **배포 상태:** 11장의 변경까지 `gh-pages`로 배포했습니다(2026-11-21). 이후 수정은 `npm run deploy`로 다시 배포합니다. 배포할 때 글 안의 `TODO` 주석은 자동으로 제거됩니다(소스의 `.md`에는 남음).
+- **배포 상태:** 11장의 변경까지 `gh-pages`로 배포했습니다(2026-11-21). `main`에 push하면 GitHub Actions가 자동 배포합니다(2026-11-21 기준 정상 동작 확인). 글 안의 `TODO` 주석은 **빌드할 때** 자동으로 제거됩니다(`astro.config.mjs`, 소스의 `.md`에는 남음).
 
 ## 2. 반드시 지킬 규칙 (사용자 지침)
 1. **한/영 동기화:** 사용자가 한국어(`src/i18n/ko.ts`, `src/content/**/ko/*.md`)를 고치면, 대응하는 영어 파일(`en.ts`, `en/*.md`)을 같은 내용으로 번역해 맞춥니다.
@@ -42,7 +42,7 @@ npm run build      # 빌드 확인. 지금은 57쪽이 나와야 정상입니다
 - 원본 자료(PDF, 보고서, 사진)는 이전 장치의 `C:\Users\Kinesis\Pictures\gitblog_임시자료들\` 아래에 있었고(`AAO`, `CareLight`, `Terra-128`), Isaac Sim은 `~/Github/isaac-ros2-control-manipulator` 저장소를 썼습니다. **저장소에는 원본이 없으니** 다른 장치에서 이 자료가 필요하면 사용자에게 다시 받아야 합니다.
 
 ## 4. 배포
-- GitHub 계정의 Actions에 결제 문제 잠금이 있어 Actions 배포는 실패합니다(무해). 대신 **`gh-pages` 브랜치 방식**을 씁니다.
+- `main`에 push하면 `.github/workflows/deploy.yml`(GitHub Actions)이 배포합니다. 예전에 Actions가 결제 문제로 막혔을 때 쓰던 **`gh-pages` 브랜치 방식**도 남아 있습니다(Actions가 다시 막히면 이쪽을 씁니다).
   ```bash
   npm run deploy              # 빌드해서 로컬 gh-pages 브랜치를 갱신
   git push origin gh-pages    # 사용자가 직접 push
