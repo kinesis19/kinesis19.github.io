@@ -1,0 +1,34 @@
+---
+import { getDict, localePath, type Lang } from '../i18n';
+import { experience } from '../data/experience';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const x = t.experience;
+const dot = (d: string) => d.replace('-', '.');
+const period = (start: string, end: string) => `${dot(start)} – ${end ? dot(end) : x.present}`;
+---
+<section class="band alt" id="experience">
+  <div class="wrap">
+    <div class="st rv"><span class="no">03</span><h2>{x.title}</h2><p>{x.intro}</p></div>
+    <ol class="exl">
+      {experience.map((e) => (
+        <li class="exi rv">
+          <div class="exp">{period(e.start, e.end)}</div>
+          <div class="exb">
+            <h3>{e.org}</h3>
+            {e.sub && <div class="exs">{e.sub[lang]}</div>}
+            <div class="exr">{e.role[lang]}</div>
+            <ul>{e.bullets[lang].map((b) => <li>{b}</li>)}</ul>
+            {(e.url || e.links) && (
+              <div class="exk">
+                {e.url && <a href={e.url} target="_blank" rel="noopener">{e.org} ↗</a>}
+                {e.links?.map((l) => <a href={localePath(lang, `/projects/${l.slug}/`)}>{l[lang]} →</a>)}
+              </div>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

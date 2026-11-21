@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import Hero from './Hero.astro';
 import Profile from './Profile.astro';
 import Projects from './Projects.astro';
+import Experience from './Experience.astro';
+import Activity from './Activity.astro';
 import JournalRows from './JournalRows.astro';
 import Contact from './Contact.astro';
 import { getDict, localePath, type Lang } from '../i18n';
@@ -34,9 +36,11 @@ const json = JSON.stringify(clientData).replace(/</g, '\\u003c');
   <Hero lang={lang} />
   <Profile lang={lang} />
   <Projects lang={lang} items={projects} />
+  <Experience lang={lang} />
+  <Activity lang={lang} />
   <section class="band alt" id="journal">
     <div class="wrap">
-      <div class="st rv"><span class="no">03</span><h2>{t.journal.title}</h2><p>{t.journal.intro}</p></div>
+      <div class="st rv"><span class="no">05</span><h2>{t.journal.title}</h2><p>{t.journal.intro}</p></div>
       <JournalRows lang={lang} items={journal} limit={4} />
       {journal.length > 4 && <div class="allbar"><a class="btn o" href={localePath(lang, '/journal/')}>{t.journal.viewAll}</a></div>}
     </div>

@@ -9,7 +9,7 @@ export const en: Dict = {
     description:
       "Portfolio of Kinesis: ROS 2 robot software, STM32 circuit design and wireless communication. I build every point where software moves hardware.",
   },
-  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'KO', langSwitchLabel: '한국어로 보기' },
+  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', experience: 'EXPERIENCE', activity: 'ACTIVITY', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'KO', langSwitchLabel: '한국어로 보기' },
   hero: {
     role: 'Robotics & Embedded Engineer',
     tagBefore: 'Turning code into',
@@ -74,6 +74,31 @@ export const en: Dict = {
     meta: { year: 'YEAR', role: 'ROLE', team: 'TEAM', category: 'CATEGORY' },
     fallbackNotice: 'This project has not been translated yet, so the original (Korean) is shown.',
     backToProjects: '← All projects',
+  },
+  experience: {
+    title: 'EXPERIENCE',
+    intro: 'Where I have worked: an internship, my robot club, and mentoring.',
+    present: 'Present',
+  },
+  activity: {
+    title: 'ACTIVITY',
+    intro: 'My awards since 2018 and the events I took part in, and the scale of the work records I have kept since March 2025.',
+    awardsTitle: 'Awards & competition results',
+    team: 'Team result',
+    timelineTitle: 'Timeline',
+    statsTitle: 'Activity record stats',
+    upcoming: 'Upcoming',
+    kinds: { award: 'Award', event: 'Event' },
+    stats: {
+      records: 'Total records',
+      docs: 'Work documents',
+      logs: 'Daily logs',
+      months: 'Active months',
+      period: 'Period',
+      perMonth: 'Records per month',
+      perProject: 'Records per area',
+      note: 'Only records with content are counted. (as of 2026-11-21)',
+    },
   },
   journal: {
     title: 'JOURNAL',

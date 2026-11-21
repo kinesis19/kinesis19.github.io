@@ -7,7 +7,7 @@ export const ko = {
     description:
       'ROS 2 로봇 소프트웨어, STM32 회로 설계, 무선 통신까지. 소프트웨어가 하드웨어를 움직이는 모든 지점을 만드는 Kinesis의 포트폴리오.',
   },
-  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'EN', langSwitchLabel: 'Switch to English' },
+  nav: { home: 'HOME', profile: 'PROFILE', projects: 'PROJECTS', experience: 'EXPERIENCE', activity: 'ACTIVITY', journal: 'JOURNAL', contact: 'CONTACT', langSwitch: 'EN', langSwitchLabel: 'Switch to English' },
   hero: {
     role: 'Robotics & Embedded Engineer',
     tagBefore: '코드를',
@@ -72,6 +72,31 @@ export const ko = {
     meta: { year: 'YEAR', role: 'ROLE', team: 'TEAM', category: 'CATEGORY' },
     fallbackNotice: '이 프로젝트는 아직 번역되지 않아 원문(한국어)으로 표시됩니다.',
     backToProjects: '← 프로젝트 목록',
+  },
+  experience: {
+    title: 'EXPERIENCE',
+    intro: '인턴, 동아리, 멘토로 일해 온 경력입니다.',
+    present: '현재',
+  },
+  activity: {
+    title: 'ACTIVITY',
+    intro: '2018년부터의 수상 경력과 행사 참여, 그리고 2025년 3월부터 쌓아 온 작업 기록의 규모입니다.',
+    awardsTitle: '수상과 대회 성적',
+    team: '팀 성과',
+    timelineTitle: '타임라인',
+    statsTitle: '활동 기록 통계',
+    upcoming: '예정',
+    kinds: { award: '수상', event: '행사' },
+    stats: {
+      records: '전체 기록',
+      docs: '업무 문서',
+      logs: '근무일지',
+      months: '활동한 달',
+      period: '기간',
+      perMonth: '월별 기록 수',
+      perProject: '분야별 기록 수',
+      note: '내용이 있는 기록만 집계했습니다. (2026-11-21 기준)',
+    },
   },
   journal: {
     title: 'JOURNAL',

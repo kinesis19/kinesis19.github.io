@@ -1,0 +1,84 @@
+---
+import { getDict, localePath, type Lang } from '../i18n';
+import { awards, timeline, stats, type ActItem } from '../data/activity';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const a = t.activity;
+const dot = (d: string) => (d ? d.replace('-', '.') : '');
+const href = (i: ActItem) => (i.slug ? localePath(lang, `/projects/${i.slug}/`) : '');
+const maxMonth = Math.max(...stats.months.map(([, n]) => n));
+const maxProject = Math.max(...stats.projects.map((p) => p.count));
+---
+<section class="band" id="activity">
+  <div class="wrap">
+    <div class="st rv"><span class="no">04</span><h2>{a.title}</h2><p>{a.intro}</p></div>
+
+    <div class="act">
+      <div class="act-col rv">
+        <h3 class="act-h">{a.awardsTitle}</h3>
+        <ul class="awl">
+          {awards.map((i) => {
+            const link = href(i);
+            const Tag = link ? 'a' : 'div';
+            return (
+              <li>
+                <Tag class="awi" href={link || undefined}>
+                  <span class="awd">{dot(i.date) || 'TEAM'}</span>
+                  <span class="awt">{i[lang]}</span>
+                  {i.team && <span class="awb">{a.team}</span>}
+                </Tag>
+              </li>
+            );
+          })}
+        </ul>
+
+        <h3 class="act-h">{a.statsTitle}</h3>
+        <div class="stg">
+          <div class="stn"><b>{stats.total}</b><small>{a.stats.records}</small></div>
+          <div class="stn"><b>{stats.docs}</b><small>{a.stats.docs}</small></div>
+          <div class="stn"><b>{stats.logs}</b><small>{a.stats.logs}</small></div>
+          <div class="stn"><b>{stats.months.length}</b><small>{a.stats.months}</small></div>
+        </div>
+        <p class="stp">{a.stats.period}: {dot(stats.from)} – {dot(stats.to)}</p>
+
+        <h4 class="act-s">{a.stats.perMonth}</h4>
+        <div class="mbars" role="img" aria-label={a.stats.perMonth}>
+          {stats.months.map(([m, n]) => (
+            <div class="mb" title={`${dot(m)}: ${n}`}>
+              <i style={`height:${Math.max(3, Math.round((n / maxMonth) * 100))}%`}></i>
+              <span>{m.slice(2, 4)}.{m.slice(5)}</span>
+            </div>
+          ))}
+        </div>
+
+        <h4 class="act-s">{a.stats.perProject}</h4>
+        <ul class="pbars">
+          {stats.projects.map((p) => (
+            <li><span class="pn2">{p[lang]}</span><span class="pb"><i style={`width:${Math.round((p.count / maxProject) * 100)}%`}></i></span><b>{p.count}</b></li>
+          ))}
+        </ul>
+        <p class="stnote">{a.stats.note}</p>
+      </div>
+
+      <div class="act-col rv">
+        <h3 class="act-h">{a.timelineTitle}</h3>
+        <ol class="tlist">
+          {timeline.map((i) => {
+            const link = href(i);
+            const Tag = link ? 'a' : 'div';
+            return (
+              <li class={`k-${i.kind}`}>
+                <Tag class="tli" href={link || undefined}>
+                  <span class="tld">{dot(i.date)}</span>
+                  <span class="tlk">{a.kinds[i.kind]}</span>
+                  <span class="tlt">{i[lang]}{i.upcoming && <em>{a.upcoming}</em>}</span>
+                </Tag>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

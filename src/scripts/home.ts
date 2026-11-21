@@ -204,7 +204,7 @@ window.addEventListener('popstate', () => {
 });
 
 /* ───── 스크롤 위치에 따라 상단 메뉴 강조 ───── */
-const ids = ['top', 'profile', 'projects', 'journal'];
+const ids = ['top', 'profile', 'projects', 'experience', 'activity', 'journal'];
 const navLinks = Array.from(document.querySelectorAll<HTMLElement>('.site-nav .l a[data-nav]'));
 function onScroll() {
   const y = scrollY + 200;

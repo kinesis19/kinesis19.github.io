@@ -22,6 +22,19 @@ if (out('git status --porcelain --untracked-files=no')) {
 sh('npm run build');
 const dist = path.join(root, 'dist');
 if (!fs.existsSync(path.join(dist, 'index.html'))) throw new Error('dist/index.html 이 없습니다. 빌드를 확인하세요.');
+// 글 안의 작업용 `<!-- TODO ... -->` 주석은 배포본(HTML 소스)에서 제거합니다. 소스의 .md 에는 그대로 남습니다.
+const stripTodo = (dir) => {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, ent.name);
+    if (ent.isDirectory()) stripTodo(p);
+    else if (ent.name.endsWith('.html')) {
+      const s = fs.readFileSync(p, 'utf8');
+      const n = s.replace(/<!--\s*TODO[\s\S]*?-->/g, '');
+      if (n !== s) fs.writeFileSync(p, n);
+    }
+  }
+};
+stripTodo(dist);
 if (!fs.existsSync(path.join(dist, '.nojekyll'))) fs.writeFileSync(path.join(dist, '.nojekyll'), '');
 console.log(`\n배포할 파일: ${fs.readdirSync(dist).join(', ')}`);
 if (dry) { console.log('(--dry: 여기서 종료합니다. gh-pages 브랜치는 만들지 않았습니다.)'); process.exit(0); }

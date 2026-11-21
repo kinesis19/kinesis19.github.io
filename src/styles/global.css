@@ -244,6 +244,7 @@ section[id], header[id] { scroll-margin-top: 62px; }
 .doc a:hover { color: var(--r); }
 .doc img { display: block; border-radius: 12px; border: 1px solid var(--line); margin: 22px 0 6px; max-width: 100%; height: auto; }
 .doc img + em { display: block; color: var(--mut); font-size: 13.5px; font-style: normal; margin-bottom: 22px; }
+.doc video { display: block; width: 100%; max-height: 520px; border-radius: 12px; border: 1px solid var(--line); background: #000; margin: 22px 0 6px; }
 .doc iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; }
 .doc blockquote { font-style: normal; }
 .doc code { font-size: .9em; background: #1b1b20; padding: 2px 6px; border-radius: 5px; }
@@ -284,4 +285,69 @@ section[id], header[id] { scroll-margin-top: 62px; }
   .site-nav .wrap { gap: 12px; } .logo { margin-right: auto; }
   .pn-in { padding: 20px 18px 34px; } .pn .cl { padding: 12px 18px; }
   .pd-meta { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ───────── activity (수상 · 타임라인 · 통계) ───────── */
+.act { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: start; }
+.act-col { min-width: 0; }
+.act-h { font-size: 13px; letter-spacing: .18em; color: var(--r); font-weight: 800; margin: 0 0 14px; text-transform: uppercase; }
+.act-h:not(:first-child) { margin-top: 38px; }
+.act-s { font-size: 12px; letter-spacing: .14em; color: var(--mut); font-weight: 700; margin: 22px 0 10px; text-transform: uppercase; }
+.awl { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.awi { position: relative; display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 4px 14px; align-items: baseline; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; transition: border-color .25s, transform .25s; }
+a.awi:hover { border-color: var(--r); transform: translateX(4px); }
+.awd { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: var(--r); }
+.awt { font-weight: 700; line-height: 1.45; }
+.awb { grid-column: 2; justify-self: start; font-size: 11px; color: var(--mut); border: 1px solid var(--line); border-radius: 99px; padding: 1px 10px; }
+.stg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stn { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stn b { display: block; font-size: 28px; font-weight: 900; line-height: 1.1; }
+.stn small { color: var(--mut); font-size: 12px; }
+.stp { color: var(--mut); font-size: 13px; margin-top: 10px; }
+.mbars { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; height: 120px; align-items: end; }
+.mb { position: relative; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.mb i { display: block; width: 100%; background: var(--r); border-radius: 2px 2px 0 0; min-height: 3px; opacity: .9; }
+.mb span { font-size: 9.5px; color: var(--mut); margin-top: 4px; white-space: nowrap; }
+.mb:not(:nth-child(3n+1)) span { visibility: hidden; }
+.pbars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pbars li { display: grid; grid-template-columns: 150px minmax(0, 1fr) 34px; gap: 10px; align-items: center; font-size: 13px; }
+.pbars .pn2 { color: #d6d6db; }
+.pbars .pb { height: 8px; background: #1b1b20; border-radius: 99px; overflow: hidden; }
+.pbars .pb i { display: block; height: 100%; background: var(--r); border-radius: 99px; }
+.pbars b { text-align: right; }
+.stnote { color: var(--mut); font-size: 12px; margin-top: 14px; }
+.tlist { list-style: none; margin: 0; padding: 0 0 0 18px; border-left: 2px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.tlist li { position: relative; }
+.tlist li::before { content: ""; position: absolute; left: -24px; top: 15px; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid #555; }
+.tlist li.k-award::before { background: var(--r); border-color: var(--r); }
+.tli { display: grid; grid-template-columns: 62px 64px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 8px 12px; border-radius: 8px; transition: background .2s; }
+a.tli:hover { background: var(--card); }
+.tld { font-size: 12px; font-weight: 800; letter-spacing: .06em; color: var(--mut); }
+.tlk { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8a8a93; }
+.tlist li.k-award .tlk { color: var(--r); }
+.tlt { font-size: 14.5px; line-height: 1.45; }
+.tlt em { margin-left: 8px; font-style: normal; font-size: 11px; color: var(--r); border: 1px solid var(--r); border-radius: 99px; padding: 0 8px; }
+@media (max-width: 900px) {
+  .act { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .pbars li { grid-template-columns: 110px minmax(0, 1fr) 30px; }
+  .tli { grid-template-columns: 56px minmax(0, 1fr); }
+  .stg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tlk { display: none; }
+}
+
+/* ───────── experience (경력) ───────── */
+.exl { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.exi { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; transition: border-color .25s; }
+.exi:hover { border-color: var(--r); }
+.exp { font-size: 13px; font-weight: 800; letter-spacing: .08em; color: var(--r); padding-top: 5px; }
+.exb h3 { font-size: 20px; font-weight: 800; line-height: 1.3; }
+.exs { color: var(--mut); font-size: 13px; margin-top: 2px; }
+.exr { color: var(--mut); font-weight: 600; margin: 2px 0 10px; }
+.exb ul { margin: 0; padding-left: 18px; list-style: disc; color: #d6d6db; display: flex; flex-direction: column; gap: 4px; font-size: 15px; }
+.exb ul li::marker { color: var(--r); }
+.exk { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 14px; font-weight: 700; }
+.exk a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--r); }
+.exk a:hover { color: var(--r); }
+@media (max-width: 700px) {
+  .exi { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px; }
 }
