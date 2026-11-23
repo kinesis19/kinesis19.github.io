@@ -1,15 +1,19 @@
 // 링크 미리보기용 대표 이미지(public/og.png, 1200x630)를 만듭니다.  사용법: npm run make-og
-// 오른쪽 사진은 기존 프로젝트 이미지를 사용합니다. 다른 이미지를 쓰려면 PHOTO 경로만 바꾸세요.
+// 오른쪽 사진은 프로젝트 썸네일(국방 2026)을 사용합니다. 다른 이미지를 쓰려면 PHOTO 경로(와 PHOTO_LEFT)만 바꾸세요.
 import sharp from 'sharp';
 import fs from 'node:fs';
 
 sharp.cache(false);
 const W = 1200, H = 630;
-const PHOTO = 'public/images/airship-world-overview.webp';
+const PHOTO = 'public/images/thumb-defense-2026.webp';
+const PHOTO_LEFT = 170; // 가로로 긴 사진에서 오른쪽 패널에 보일 부분의 시작 위치(px, 높이를 630으로 맞춘 뒤 기준)
 
 // 오른쪽 사진을 사선으로 잘라 붙입니다.
 const photoW = 560;
-const photo = await sharp(fs.readFileSync(PHOTO)).resize(photoW, H, { fit: 'cover', position: 'centre' }).modulate({ saturation: 0.85, brightness: 0.95 }).png().toBuffer();
+const scaled = await sharp(fs.readFileSync(PHOTO)).resize({ height: H }).toBuffer();
+const sm = await sharp(scaled).metadata();
+const left = Math.max(0, Math.min(PHOTO_LEFT, (sm.width ?? photoW) - photoW));
+const photo = await sharp(scaled).extract({ left, top: 0, width: photoW, height: H }).modulate({ saturation: 0.95, brightness: 0.95 }).png().toBuffer();
 const mask = Buffer.from(`<svg width="${photoW}" height="${H}"><polygon points="170,0 ${photoW},0 ${photoW},${H} 0,${H}" fill="#fff"/></svg>`);
 const photoMasked = await sharp(photo).composite([{ input: mask, blend: 'dest-in' }]).png().toBuffer();
 
