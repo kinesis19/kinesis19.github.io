@@ -8,7 +8,7 @@
 - **스택:** Astro 5, Tailwind CSS v4, Pretendard, 한/영 이중 언어
 - **디자인:** "v16" (어두운 바탕, 빨강 포인트, 슬래시 호버, 벤토 프로젝트 브라우저, 페이지 이동 없는 상세 패널)
 - **현재 단계:** 틀과 8개 기존 프로젝트 이전을 마쳤고, 2024~2026년 프로젝트 4개(AAO, Care Light, Isaac Sim, Terra-128)의 내용을 채웠습니다. 그 위에 **업무 기록을 반영한 프로젝트 13개와 EXPERIENCE·ACTIVITY 섹션(경력, 수상, 타임라인, 통계)** 을 추가해 `main`에 병합했습니다(11장). **남은 것은 7장의 TODO(영상, 캡처, 날짜 확인)** 입니다.
-- **배포 상태:** 11장의 변경까지 `gh-pages`로 배포했습니다(2026-11-21). `main`에 push하면 GitHub Actions가 자동 배포합니다(2026-11-21 기준 정상 동작 확인). 글 안의 `TODO` 주석은 **빌드할 때** 자동으로 제거됩니다(`astro.config.mjs`, 소스의 `.md`에는 남음).
+- **배포 상태:** 11장의 변경까지 `gh-pages`로 배포했습니다(2026-11-21). `main`에 push하면 GitHub Actions가 자동 배포합니다(2026-11-23에 Pages 소스를 GitHub Actions로 전환하고 첫 배포 성공을 확인). 글 안의 `TODO` 주석은 **빌드할 때** 자동으로 제거됩니다(`astro.config.mjs`, 소스의 `.md`에는 남음).
 
 ## 2. 반드시 지킬 규칙 (사용자 지침)
 1. **한/영 동기화:** 사용자가 한국어(`src/i18n/ko.ts`, `src/content/**/ko/*.md`)를 고치면, 대응하는 영어 파일(`en.ts`, `en/*.md`)을 같은 내용으로 번역해 맞춥니다.
@@ -47,7 +47,7 @@ npm run build      # 빌드 확인. 지금은 57쪽이 나와야 정상입니다
   npm run deploy              # 빌드해서 로컬 gh-pages 브랜치를 갱신
   git push origin gh-pages    # 사용자가 직접 push
   ```
-- GitHub Pages 설정은 "Deploy from a branch → `gh-pages` / (root)" 입니다. 자세한 내용은 `README.md`의 배포 장을 보세요.
+- **GitHub Pages 설정은 "Source: GitHub Actions" 입니다**(2026-11-23에 전환). `gh-pages` 브랜치는 더 이상 서비스에 쓰이지 않고 비상용으로만 남아 있습니다. 비상시에 gh-pages 방식을 쓰려면 Settings → Pages → Source를 "Deploy from a branch → `gh-pages` / (root)"로 되돌려야 합니다. 자세한 내용은 `README.md`의 배포 장을 보세요.
 - 배포하기 전에 `npm run build`가 통과하는지 확인합니다.
 
 ## 5. 프로젝트 현황
@@ -130,8 +130,7 @@ grep -rn "TODO" src/content
 - 모바일에서 상단 메뉴 링크가 숨겨져 있고 햄버거 메뉴가 없습니다.
 - 이력서 PDF(`profile.ts`의 `resume: ''`)를 넣으면 버튼이 나타납니다.
 - 검색엔진 사이트맵 등록(`sitemap-index.xml`).
-- GitHub Actions 잠금이 풀리면 `.github/workflows/deploy.yml` 로 자동 배포할 수 있고, 그때까지는 gh-pages 방식을 씁니다(Support 문의는 사용자 쪽에서 진행).
-- `.github/workflows/deploy.yml`이 실패하는 것이 신경 쓰이면 GitHub의 Actions 탭에서 "Disable workflow" 하면 됩니다.
+- GitHub Actions 잠금은 풀렸고(교육용 라이선스 확보), 2026-11-23에 Pages 소스를 Actions로 전환했습니다. 전환이 안정적인 것을 확인한 뒤, 원격 `gh-pages` 브랜치와 `npm run deploy` 스크립트를 정리할지 사용자와 정하세요(삭제는 사용자 확인 후).
 
 ## 10. 커밋 전 체크리스트
 1. `npm run build` 통과(현재 57쪽)
